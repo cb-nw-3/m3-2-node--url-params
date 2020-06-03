@@ -7,6 +7,7 @@ const { top50 } = require("./data/top50");
 
 const PORT = process.env.PORT || 8000;
 const home = (req, res) => res.render("pages/home");
+const top50page = (req, res) => res.render("pages/top50");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.set("view engine", "ejs");
 // endpoints here
 
 app.get("/", home);
+app.get("/top50", top50page);
 
 // handle 404s
 app.get("*", (req, res) => {
