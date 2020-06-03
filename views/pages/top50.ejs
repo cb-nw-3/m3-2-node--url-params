@@ -1,0 +1,8 @@
+<%- include('../partials/header', {title: "Top 50 Songs Streamed on Spotify"}) %>
+
+<ul>
+    <% data.forEach( item => { %>
+
+    <li><%= item.rank %> - <%= item.title %></li>
+
+    <% }) %>

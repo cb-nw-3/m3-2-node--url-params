@@ -1,5 +1,5 @@
 'use strict';
-
+const express = require('express');
 const morgan = require('morgan');
 
 const { top50 } = require('./data/top50');
@@ -10,13 +10,17 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.static('public'));
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 
 // endpoints here
 
+app.get('/top50', (req, res) => {
+    res.render('pages/top50', { data: top50 });
+})
+
 // handle 404s
-app.git('*', (req, res) => {
+app.get('*', (req, res) => {
     res.status(404);
     res.render('pages/fourOhFour', {
         title: 'I got nothing',
@@ -24,4 +28,4 @@ app.git('*', (req, res) => {
     });
 });
 
-get.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
