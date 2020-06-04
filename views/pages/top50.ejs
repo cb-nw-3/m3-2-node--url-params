@@ -1,7 +1,3 @@
 <%- include('../partials/header',{title:"Top 50 Songs Streamed on Spotify"}) %>
-<ol>
-  <% top50.forEach((element, index) => { %>
-  <li>Number <%= index + 1 %>. <%= element.title %></li>
-  <% }); %>
-</ol>
+<%- include('../partials/songs') %>
 <%- include('../partials/footer') %>
