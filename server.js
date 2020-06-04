@@ -14,7 +14,13 @@ const songPage = (req, res) => {
   // console.log(path[0]);
   // console.log(path[1]);
 
-  if (path[0] === 'song' && path.length === 2) {
+  if (
+    path[0] === 'song' &&
+    path.length === 2 &&
+    parseInt(path[1]) > 1 &&
+    parseInt(path[1]) < 50 &&
+    path[1].length === 2
+  ) {
     const song = top50.find((element) => element.rank === parseInt(path[1]));
     res.render('pages/song', { song });
   } else {
