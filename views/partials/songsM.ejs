@@ -1,0 +1,15 @@
+<ol>
+  <% popularArtist.forEach((element, index) => { %>
+  <li class = "line">
+    <span class = "indexWrapper">
+      <div class="index">#<%= index + 1 %></div>
+      <div class="streams">(<%= element.streams %> streams)</div>
+    </span>
+    <span class ="dataWrapper">
+      <div class = "title"><%= element.title%></div>
+      <div class = "artist"><i><%=element.artist%></i></div>
+    </span> 
+    <span class = "date"><%=element.publicationDate%></span>
+  </li>
+  <% }); %>
+</ol>
