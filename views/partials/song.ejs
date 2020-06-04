@@ -1,0 +1,11 @@
+<ul style="margin: 20px;">
+  <% rank.forEach(song => { %>
+    <li>
+      #<%= song.rank  %>
+      (<%= song.streams %> streams) 
+      <%= song.title %> 
+      by <%= song.artist %>
+      published on <%= song.publicationDate %>
+    </li>
+  <% }) %>
+</ul>
