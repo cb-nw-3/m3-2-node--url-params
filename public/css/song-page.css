@@ -43,3 +43,23 @@ div.song-card-streams {
   font-size: 15rem;
   color: #d3d3d3;
 }
+
+div.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+a.button {
+  width: 150px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  margin: 20px;
+  text-decoration: none;
+  background-color: #e39300;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+}

@@ -13,6 +13,11 @@
     <div class='song-card-streams'>
       <%- song.streams %>
     </div>
+
+      <div class="links">
+        <a href="/top50/song/<%= parseInt(song.rank) - 1 %>" class="button">Previous</a>
+        <a href="/top50/song/<%= parseInt(song.rank) + 1 %>" class="button">Next</a>
+      </div>
   </div>
 </div>
 <% }); %>
