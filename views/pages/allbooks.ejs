@@ -1,0 +1,11 @@
+<%- include('../partials/header', {}) %>
+<div>
+    <ol>
+        <% books.forEach(book => { %>
+        <li>ID# <%= book.id %>. <%= book.title %> </li>
+        <% }); %>
+        </ol>
+    </div>
+
+
+<%- include('../partials/footer', {}) %>

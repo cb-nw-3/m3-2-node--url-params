@@ -4,6 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 
 const { top50 } = require("./data/top50");
+const { books } = require("./data/books");
 
 const PORT = process.env.PORT || 8000;
 const app = express();
@@ -13,7 +14,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 
-// endpoints here
+// endpoints here (For Exercise 1)
 app.get("/top50", (req, res) => {
   res.render("pages/top50", {
     title: "Top 50 Songs Streamed on Spotify",
@@ -71,6 +72,14 @@ app.get("/top50/song/:rank", (req, res) => {
       path: req.originalUrl,
     });
   }
+});
+
+// endpoints here (For Exercise 2)
+app.get("/allbooks", (req, res) => {
+  res.render("pages/allbooks", {
+    title: "My Favorite 25 Books of all Time",
+    books: books,
+  });
 });
 // handle 404s
 app.get("*", (req, res) => {
