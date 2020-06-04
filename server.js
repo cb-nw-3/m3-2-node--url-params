@@ -33,6 +33,17 @@ const findTopArtist = (arr) => {
   return topArtistSongs;
 };
 
+const findSong = (arr, rank) => {
+  let currentSong = [];
+
+  arr.forEach((song) => {
+    if (song.rank === parseInt(rank)) {
+      currentSong.push(song);
+    }
+  });
+  return currentSong;
+};
+
 const express = require("express");
 
 const morgan = require("morgan");
@@ -49,6 +60,8 @@ const title = "Top 50 Songs Streamed on Spotify";
 
 const mostPopularArtistTitle = "Most Popular Artist";
 
+const songTitle = `Song #`;
+
 app.use(morgan("dev"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
@@ -64,6 +77,21 @@ app.get("/top50/popular-artist", (req, res) => {
     title: mostPopularArtistTitle,
     top50: topArtist,
   });
+});
+
+app.get("/top50/song/:rank", (req, res) => {
+  if (req.params.rank < 51 && req.params.rank > 0) {
+    res.render("pages/top50.ejs", {
+      title: songTitle + req.params.rank,
+      top50: findSong(top50, req.params.rank),
+    });
+  } else {
+    res.status(404);
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
 });
 
 // handle 404s
