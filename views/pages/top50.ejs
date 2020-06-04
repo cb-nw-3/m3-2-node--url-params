@@ -1,2 +1,7 @@
 <%- include('../partials/header.ejs'); %>
+<ul>
+  <% top50.forEach((item) => { %>
+    <li><%- `Number ${item.rank}. ${item.title}` %></li>
+  <% }); %>
+</ul>
 <%- include('../partials/footer.ejs'); %>

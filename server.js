@@ -19,7 +19,7 @@ app.set("view engine", "ejs");
 
 // endpoints here
 app.get("/", (req, res) => {
-  res.render("pages/top50.ejs", { title: title });
+  res.render("pages/top50.ejs", { title: title, top50: top50 });
 });
 
 // handle 404s
