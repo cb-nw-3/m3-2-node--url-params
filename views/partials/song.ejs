@@ -1,0 +1,5 @@
+<ul>
+  <% top50.forEach(item => { %>
+    <li>#<%- item.rank %> (<%- item.streams %> streams) <%- item.title %> by <%- item.artist %> <%- item.publicationDate %></li>
+  <% }) %>
+</ul>
