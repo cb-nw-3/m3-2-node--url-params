@@ -1,0 +1,56 @@
+ol {
+  margin-top: 12px;
+}
+
+.line {
+  padding: 10px 12px;
+  margin: 0 12px;
+  border-bottom: 1px solid gray;
+  display: flex;
+  height: 88px;
+}
+
+.indexWrapper {
+  padding-left: 8px;
+  padding-top: 12px;
+}
+
+.index {
+  font-size: 2.4rem;
+  font-weight: bolder;
+  margin-bottom: 2px;
+  text-shadow: 1.4px 0 black;
+  letter-spacing: 1px;
+}
+
+.streams {
+  font-size: 0.55rem;
+  color: grey;
+}
+
+.dataWrapper {
+  margin-left: 18px;
+  width: 350px;
+}
+
+.title {
+  font-weight: 70;
+  text-shadow: 1.4px 0 black;
+  letter-spacing: 1px;
+}
+
+.artist {
+  font-style: italic;
+}
+
+.date {
+  margin-left: 5px;
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.65rem;
+  color: gray;
+}
+
+.date::before {
+  content: 'publication date: ';
+}
