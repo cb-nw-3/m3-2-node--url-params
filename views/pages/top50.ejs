@@ -1,4 +1,10 @@
 <!-- //render is already in route views/pages, need to go back .. then into partials -->
 
 <%- include('../partials/header') %>
+<ul style="margin: 20px;">
+  <% rank.forEach(song => { %>
+    <li>Number <%= song.rank  %>. <%= song.title %> </li>
+  <% }) %>
+</ul>
+
 <%- include('../partials/footer') %>
