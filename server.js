@@ -2,7 +2,11 @@
 
 const morgan = require('morgan');
 
-const { top50 } = require('./data/top50');
+const express = require('express')
+
+const nodemon = require('nodemon')
+
+const { top50 }  = require('./data/top50');
 
 const PORT = process.env.PORT || 8000;
 
@@ -12,11 +16,17 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
+app.get('/top50', function (req,res){
+    res.render('pages/top50',{
+        title: 'Top 50 Songs Streamed On Spotify',
+        top50: top50,
+    });
+})
 
 // endpoints here
 
 // handle 404s
-app.git('*', (req, res) => {
+app.get('*', (req, res) => {
     res.status(404);
     res.render('pages/fourOhFour', {
         title: 'I got nothing',
@@ -24,4 +34,4 @@ app.git('*', (req, res) => {
     });
 });
 
-get.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

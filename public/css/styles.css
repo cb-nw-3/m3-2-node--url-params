@@ -57,6 +57,49 @@ header {
   padding: 12px 14px;
 }
 
+.list {
+  padding:0 10px;
+}
+
+.list > li {
+  border-bottom:1px solid gray;
+}
+.row {
+  display:flex;
+}
+
+.rankAndViews{
+  display:flex;
+  flex-direction: column;
+  width:200px;
+}
+.rank{
+  font-size:3rem;
+  font-weight: bold;
+}
+
+.mainInfo{
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+}
+
+.title{
+  font-size:2rem;
+}
+
+.artist{
+  font-style:italic;
+}
+
+.publicationDate{
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.date{
+  font-size:0.8rem;
+}
 @media screen and (min-width: 900px) {
   .content {
     flex-direction: row;
