@@ -81,7 +81,7 @@ app.get("/top50/popular-artist", (req, res) => {
 
 app.get("/top50/song/:rank", (req, res) => {
   if (req.params.rank < 51 && req.params.rank > 0) {
-    res.render("pages/top50.ejs", {
+    res.render("pages/songPage.ejs", {
       title: songTitle + req.params.rank,
       top50: findSong(top50, req.params.rank),
     });

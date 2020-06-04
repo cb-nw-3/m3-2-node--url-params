@@ -1,0 +1,19 @@
+<%- include('../partials/header.ejs'); %>
+<% top50.forEach((song) => { %>
+  <div class="song-card-container">
+  <div class="song-card">
+    <div class='song-card-title'>
+      <%- song.title %>
+    </div>
+
+    <div class='song-card-artist'>
+        <%- song.artist %>
+    </div>
+
+    <div class='song-card-streams'>
+      <%- song.streams %>
+    </div>
+  </div>
+</div>
+<% }); %>
+<%- include('../partials/footer.ejs'); %>
