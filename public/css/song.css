@@ -35,3 +35,17 @@
   font-family: 'Roboto Slab', serif;
   color: #cccccc;
 }
+
+#arrow-left-song {
+  font-size: 100px;
+  margin-right: 12px;
+  margin-top: 200px;
+  color: gray;
+}
+
+#arrow-right-song {
+  font-size: 100px;
+  margin-left: 12px;
+  margin-top: 200px;
+  color: gray;
+}
