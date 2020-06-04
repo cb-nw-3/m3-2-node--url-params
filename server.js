@@ -1,32 +1,33 @@
-'use strict';
+"use strict";
 
-const express = require('express');
-const morgan = require('morgan');
+const express = require("express");
+const morgan = require("morgan");
 
-const { top50 } = require('./data/top50');
+const { top50 } = require("./data/top50");
 
 const PORT = process.env.PORT || 8000;
 
 const app = express();
 
-app.use(morgan('dev'));
-app.use(express.static('public'));
-app.use(express.urlencoded({extended: false}));
-app.set('view engine', 'ejs');
+app.use(morgan("dev"));
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.set("view engine", "ejs");
 
 // endpoints here
-app.get('/', (req, res) => {
-    const title = 'Top 50 Songs Streamed on Spotify';
+app.get("/top50", (req, res) => {
+    const title = "Top 50 Songs Streamed on Spotify";
+    top50: top50;
 
-    res.render("./pages/top50", { title });
-})
+    res.render("./pages/top50", { title, top50 });
+});
 
 // handle 404s
-app.get('*', (req, res) => {
+app.get("*", (req, res) => {
     res.status(404);
-    res.render('pages/fourOhFour', {
-        title: 'I got nothing',
-        path: req.originalUrl
+    res.render("pages/fourOhFour", {
+        title: "I got nothing",
+        path: req.originalUrl,
     });
 });
 

@@ -1,0 +1,23 @@
+<!-- <div class='main'>
+    <ol>
+        <%# top50.forEach(( song ) => { %>
+            <li>#<%#- Object.keys(song).map(key => `${song[key]} `).join(" ") %> </li>
+        <%# }) %>
+    </ol>
+</div> -->
+
+<div class='main'>
+    <% top50.forEach(({ rank, title, artist, streams, publicationDate }) => { %>
+        <div class='song'>
+            <div class="ranking">
+                <p class="rank">#<%- `${rank}`%> </p>
+                <p class="stream">(<%- `${streams} streams`%>) </p>
+            </div>
+            <div class="info">
+                <p class="title"><%- `${title}`%> </p>
+                <p class="artist"><%- `${artist}`%> </p>
+                <p class="pub-date">Publication date: <%- `${publicationDate}`%> </p>
+            </div>
+        </div>
+    <% }) %>
+</div>
