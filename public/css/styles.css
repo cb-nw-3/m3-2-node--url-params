@@ -19,6 +19,10 @@ header {
   padding: 0 24px;
 }
 
+ul {
+  margin: 24px;
+}
+
 .main {
   flex: 1 0 auto;
   padding: 24px;
