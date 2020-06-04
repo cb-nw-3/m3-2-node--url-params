@@ -1,0 +1,45 @@
+ul {
+  margin: 20px;
+}
+
+div.song {
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+div.rank {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+span.number {
+  font-size: 50px;
+}
+
+span.streams {
+  font-size: 14px;
+}
+
+div.title {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+span.song-title {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+span.artist {
+  font-style: italic;
+}
+
+div.date {
+  flex: 1;
+  font-size: 14px;
+  align-self: flex-end;
+}
