@@ -7,7 +7,7 @@ const { top50 } = require("./data/top50");
 
 const PORT = process.env.PORT || 8000;
 const home = (req, res) => res.render("pages/home");
-const top50page = (req, res) => res.render("pages/top50");
+const top50page = (req, res) => res.render("pages/top50", { top50 });
 
 const app = express();
 
