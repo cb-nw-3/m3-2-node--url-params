@@ -16,7 +16,10 @@ app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 
 // endpoints here
-
+app.get('/top50', (req,res) => {
+  const title = "Top 50 Songs Streamted on Spotify"
+  res.render('pages/top50', {title: title});
+})
 // handle 404s
 app.get('*', (req, res) => {
     res.status(404);
