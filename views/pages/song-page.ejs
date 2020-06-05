@@ -1,0 +1,12 @@
+<%- include('../partials/header') %> 
+    <div class = 'container'>
+        <div class= 'songBox'>
+            <div class = 'titleBox'>
+                <h1><%= selectedSong.title %></h1>
+            </div>
+            <div class= 'songArtist'><%= selectedSong.artist %></div>
+            <div class = 'numberOfStreams'><%= selectedSong.streams %></div>
+        </div>
+    </div>
+
+<%- include('../partials/footer') %>
