@@ -81,6 +81,22 @@ app.get("/allbooks", (req, res) => {
     books: books,
   });
 });
+
+app.get("/allbooks/book/:id", (req, res) => {
+  const id = req.params.id - 1;
+  if (books[id]) {
+    res.render("pages/bookPage", {
+      title: `Book ID#${books[id].id}`,
+      books: books[id],
+    });
+  } else {
+    res.status(404);
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
+});
 // handle 404s
 app.get("*", (req, res) => {
   res.status(404);
