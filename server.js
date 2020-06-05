@@ -97,6 +97,20 @@ app.get("/allbooks/book/:id", (req, res) => {
     });
   }
 });
+
+/*app.get("/allbooks/type/:type", (req, res) => {
+  const authors = [];
+
+  books.forEach((book) => {
+    if (!authors.includes(book.type)) {
+      authors.push(book.author);
+    }
+  });
+  res.render("pages/booktype", {
+    title: `Type:${books.type}`,
+    books: books.filter((book) => book.type),
+  });
+});*/
 // handle 404s
 app.get("*", (req, res) => {
   res.status(404);
