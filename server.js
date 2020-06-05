@@ -29,14 +29,18 @@ app.get('/top50/popular-artist', (req, res) => {
 })
 app.get('/top50/song/:songRank(\\d+)', (req, res) => {
   let songRank = req.params.songRank - 1;
-  res.render('pages/songs', {
-    // if (top50[songRank]) {
+  if (top50[songRank]) {
+    res.render('pages/songs', {
       title: `Song ${top50[songRank].rank}`,
       song: top50[songRank]
-    // } else {
-    //   console.log('clicked');
-    // }
-  })
+    })
+  } else {
+    res.status(404);
+    res.render('pages/fourOhFour', {
+      title: 'I got nothing',
+      path: req.originalUrl
+    });
+  }
 })
 
 // handle 404s
