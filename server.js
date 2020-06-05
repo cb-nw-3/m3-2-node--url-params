@@ -21,6 +21,12 @@ app.get('/top50', (req, res) => {
     top50: top50
   })
 })
+app.get('/top50/popular-artist', (req, res) => {
+  res.render('pages/popularArtist', {
+    title: "Most Popular Artist",
+    top50: top50
+  })
+})
 
 // handle 404s
 app.get('*', (req, res) => {
