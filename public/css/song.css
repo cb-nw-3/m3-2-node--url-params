@@ -34,10 +34,10 @@ li {
 .stream {
   height: 25px;
 }
-.title {
+.title-top50 {
   font-weight: bold;
 }
-.artist {
+.artist-top50 {
   font-style: italic;
 }
 .date {

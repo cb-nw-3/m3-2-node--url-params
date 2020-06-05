@@ -1,5 +1,19 @@
 <%- include('../partials/header') %>
 
+<% if (song.rank === 1) { %>
+  <div style="width: 75px; height: 50px; position: absolute; z-index: 2; top: 5px; right: 85px; background: #fafafa;"></div>
+<% } else if (song.rank === 50) { %>
+  <div style="width: 75px; height: 50px; position: absolute; z-index: 2; top: 5px; right: 5px; background: #fafafa;"></div>
+<% } %>
+
+<form action="<%= `http://localhost:8000/top50/song/${song.rank + 1}` %>">
+  <button class="next-button">Next</button>
+</form>
+
+<form action="<%= `http://localhost:8000/top50/song/${song.rank - 1}` %>">
+  <button class="previous-button">Previous</button>
+</form>
+
 <div class="song-page">
   <h2 class="title"><%- song.title %></h2>
   <p class="artist"><%- song.artist %></p>

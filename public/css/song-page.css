@@ -31,3 +31,37 @@
     font-weight: 700;
     color: #ccc;
 }
+
+.next-button {
+    position: absolute;
+    width: 75px;
+    height: 50px;
+    background: red;
+    top: 5px;
+    right: 5px;
+    color: #eee;
+    font-weight: bolder;
+    border: none;
+    opacity: 0.8;
+    transition: all 0.2s;
+    border-radius: 5px;
+}
+
+.previous-button {
+    position: absolute;
+    width: 75px;
+    height: 50px;
+    background: red;
+    top: 5px;
+    right: 85px;
+    color: #eee;
+    font-weight: bolder;
+    border: none;
+    opacity: 0.8;
+    transition: all 0.2s;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 1;
+}
