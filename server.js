@@ -82,6 +82,16 @@ let result = top50.filter(song => {
   res.render('pages/top50', {title: title, rank: obj});
   
 })
+for(let i = 1; i<=50; i++) {
+
+  app.get(`/top50/song/${i}`, (req,res) => {
+    const title = `Song #${i}`
+    const song = top50.filter(song => song.rank === i);
+    console.log(song);
+    res.render('partials/song-page', {title: title, rank: song });
+  }) 
+
+}
 
 // handle 404s
 app.get('*', (req, res) => {

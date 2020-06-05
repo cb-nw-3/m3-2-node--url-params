@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<div class="song-pg-ctn">
+  <% rank.forEach(song => { %>
+      <h1> <%= song.title %> </h3>
+      <h2> <%= song.artist %> </h4>
+      <h3> <%= song.streams %> </h6>
+  <% }) %>
+</div>
+<%- include('../partials/footer') %>
