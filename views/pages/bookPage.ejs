@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs'); %>
+<% books.forEach((book) => { %>
+  <div class="song-card-container">
+  <div class="song-card">
+    <div class='song-card-title'>
+      <%- book.title %>
+      <%- `(${book.type})` %>
+    </div>
+
+    <div class='song-card-artist'>
+        <%- `by ${book.author}` %>
+    </div>
+
+    <div class='song-card-streams'>
+      <img src="<%- book.imgUrl %>" alt="book cover">
+    </div>
+    <div class="description">
+      <%- book.description %>
+    </div>
+  </div>
+</div>
+<% }); %>
+<%- include('../partials/footer.ejs'); %>
