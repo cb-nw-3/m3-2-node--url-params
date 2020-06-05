@@ -52,6 +52,8 @@ const { top50 } = require("./data/top50");
 
 const topArtist = findTopArtist(top50);
 
+const { books } = require("./data/books");
+
 const PORT = process.env.PORT || 8000;
 
 const app = express();
@@ -61,6 +63,8 @@ const title = "Top 50 Songs Streamed on Spotify";
 const mostPopularArtistTitle = "Most Popular Artist";
 
 const songTitle = `Song #`;
+
+const bookListTitle = "Books";
 
 app.use(morgan("dev"));
 app.use(express.static("public"));
@@ -92,6 +96,10 @@ app.get("/top50/song/:rank", (req, res) => {
       path: req.originalUrl,
     });
   }
+});
+
+app.get("/books", (req, res) => {
+  res.render("pages/bookList.ejs", { title: bookListTitle, books: books });
 });
 
 // handle 404s

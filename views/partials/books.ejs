@@ -1,0 +1,21 @@
+<ul>
+  <% books.forEach((book) => { %>
+    <li>
+      <div class='song'>
+        <div class='rank'>
+          <span class="number"><%- `#${book.id}`%></span>
+          <span class="streams"><%- `(${book.type})`%></span>
+        </div>
+        <div class='title'>
+          <span class="song-title"><%- book.title%></span>
+          <span class="artist"><%- `by ${book.author}`%></span>
+          <br>
+          <span><%- book.description %></span>
+        </div>
+        <div class='date'>
+          <img src="<%- book.imgUrl %>" alt="book cover">
+        </div>
+      </div>
+    </li>
+  <% }); %>
+</ul>

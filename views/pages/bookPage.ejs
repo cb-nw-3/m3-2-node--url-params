@@ -1,0 +1,24 @@
+<%- include('../partials/header.ejs'); %>
+<% books.forEach((book) => { %>
+  <div class="song-card-container">
+  <div class="song-card">
+    <div class='song-card-title'>
+      <%- song.title %>
+    </div>
+
+    <div class='song-card-artist'>
+        <%- song.artist %>
+    </div>
+
+    <div class='song-card-streams'>
+      <%- song.streams %>
+    </div>
+
+      <div class="links">
+        <a href="/top50/song/<%= parseInt(song.rank) - 1 %>" class="button">Previous</a>
+        <a href="/top50/song/<%= parseInt(song.rank) + 1 %>" class="button">Next</a>
+      </div>
+  </div>
+</div>
+<% }); %>
+<%- include('../partials/footer.ejs'); %>
