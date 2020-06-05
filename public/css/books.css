@@ -1,0 +1,40 @@
+.ids {
+  font-size: 0.55rem;
+  color: grey;
+}
+
+.dataWrapperBook {
+  margin-left: 18px;
+  min-width: 550px;
+}
+
+.dataWrapperBook > div.title > h2 {
+  font-weight: 70;
+  text-shadow: 1.4px 0 black;
+  letter-spacing: 1px;
+}
+
+.dataWrapperBook > div.autor > p {
+  margin-top: 12px;
+  font-style: italic;
+  color: gray;
+}
+
+.desc {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.65rem;
+  color: gray;
+}
+
+.type {
+  font-weight: 900;
+  font-style: italic;
+}
+
+.textDesc {
+  font-size: 0.75rem;
+  min-height: fit-content;
+}

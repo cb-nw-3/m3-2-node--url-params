@@ -7,10 +7,12 @@ ol {
   margin: 0 12px;
   border-bottom: 1px solid gray;
   display: flex;
-  height: 88px;
+  /* height: 88px; */
+  min-height: fit-content;
 }
 
 .indexWrapper {
+  min-width: 75px;
   padding-left: 8px;
   padding-top: 12px;
 }

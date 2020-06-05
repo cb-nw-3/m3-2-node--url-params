@@ -4,6 +4,7 @@ const express = require('express');
 const morgan = require('morgan');
 
 const { top50 } = require('./data/top50');
+const { books } = require('./data/books');
 const { popularArtist } = require('./data/popularArtist');
 
 const PORT = process.env.PORT || 8000;
@@ -34,6 +35,8 @@ const songPage = (req, res) => {
 const songsOfMostPopular = (req, res) =>
   res.render('pages/popular', { popularArtist });
 
+const bookList = (req, res) => res.render('pages/bookList', { books });
+
 const app = express();
 
 app.use(morgan('dev'));
@@ -47,6 +50,8 @@ app.get('/', home);
 app.get('/top50', top50page);
 app.get('/top50/*', songPage);
 app.get('/top50/popular-artist', songsOfMostPopular);
+
+app.get('/books', bookList);
 
 // handle 404s
 app.get('*', (req, res) => {
