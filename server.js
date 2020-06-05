@@ -91,6 +91,24 @@ app.get("/books", (req, res) => {
   });
 });
 
+app.get("/book/:number", (req, res) => {
+  let bookNum = parseInt(req.params.number);
+
+  let book = books.find((book) => book.id === bookNum);
+
+  if (!book) {
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
+
+  res.render("pages/book.ejs", {
+    title: book.title,
+    book: book,
+  });
+});
+
 // handle 404s
 app.get("*", (req, res) => {
   res.status(404);

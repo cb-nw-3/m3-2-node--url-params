@@ -30,14 +30,16 @@
   border: 2px solid cadetblue;
 }
 
-.book-item div:nth-child(1) span:nth-child(2) {
+.book-item div:nth-child(1) span:nth-child(2) a {
   display: block;
   font-size: large;
   font-weight: 900;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
-.book-item div:nth-child(1) span:nth-child(2):hover {
+.book-item div:nth-child(1) span:nth-child(2) a:hover {
   color: cadetblue;
 }
 
@@ -48,4 +50,17 @@
 
 .book-item div:nth-child(2) {
   flex: 4;
+}
+
+.book-card {
+  margin: auto;
+  width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 25px;
+}
+
+.book-card span:nth-child(2) {
+  display: block;
+  font-size: large;
+  font-weight: 900;
 }

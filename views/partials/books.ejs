@@ -3,8 +3,8 @@
         <% books.forEach((book) => { %>
             <li class="book-item">
                 <div>
-                    <span><img src="<%- book.imgUrl %>" alt="book"></span>
-                    <span><%- book.title %></span>  
+                    <span><a href="<%- '/book/' + book.id %>"><img src="<%- book.imgUrl %>" alt="book"></a></span>
+                    <span><a href="<%- '/book/' + book.id %>"><%- book.title %></a></span>  
                     <span>By <%- book.author %></span>
                     <span>(<%- book.type %>)</span>
                 </div>
