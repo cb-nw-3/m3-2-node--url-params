@@ -37,7 +37,7 @@ app.get('/top50/song/:songRank(\\d+)', (req, res) => {
   } else {
     res.status(404);
     res.render('pages/fourOhFour', {
-      title: 'I got nothing',
+      title: 'Why are you looking for trouble...',
       path: req.originalUrl
     });
   }
