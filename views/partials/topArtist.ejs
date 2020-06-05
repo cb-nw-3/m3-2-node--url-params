@@ -2,6 +2,7 @@
   <% let songTopArtist = []; %>
   <% let allArtist = {} %>
 <!-- loop through top50 and create object to determine most popular artist -->
+<!-- add all streams of artist to the object -->
   <% top50.forEach(item => { %>
     <% if (allArtist[item.artist]) { %>
       <% allArtist[item.artist] += item.streams; %>
@@ -9,7 +10,7 @@
       <% allArtist[item.artist] = item.streams; %>
     <% } %>
   <% }) %>
-<!-- look for most popular artist in object -->
+<!-- look for most popular (most streams) artist in object -->
   <% let popArtist = Object.keys(allArtist).reduce((a, b) => allArtist[a] > allArtist[b] ? a : b); %>
 <!-- push every song of said artist -->
   <% top50.forEach(item => { %>
