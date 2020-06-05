@@ -12,8 +12,6 @@ const home = (req, res) => res.render('pages/home');
 const top50page = (req, res) => res.render('pages/top50', { top50 });
 const songPage = (req, res) => {
   const path = req.params[0].split('/');
-  console.log(path);
-  // console.log(path[1]);
 
   if (
     path[0] === 'song' &&
@@ -36,6 +34,22 @@ const songsOfMostPopular = (req, res) =>
   res.render('pages/popular', { popularArtist });
 
 const bookList = (req, res) => res.render('pages/bookList', { books });
+const bookPage = (req, res) => {
+  const path = req.params[0].split('/');
+  if (
+    parseInt(path[0]) >= 100 &&
+    parseInt(path[0]) <= 125 &&
+    path[0].length === 3
+  ) {
+    const book = books.find((element) => element.id === parseInt(path[0]));
+    res.render('pages/book', { book });
+  } else {
+    res.render('pages/fourOhFour', {
+      title: 'I got nothing',
+      path: req.originalUrl,
+    });
+  }
+};
 
 const app = express();
 
@@ -52,6 +66,7 @@ app.get('/top50/*', songPage);
 app.get('/top50/popular-artist', songsOfMostPopular);
 
 app.get('/books', bookList);
+app.get('/books/*', bookPage);
 
 // handle 404s
 app.get('*', (req, res) => {

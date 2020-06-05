@@ -1,0 +1,13 @@
+  <div class = "bookWrapper">
+    <i class="fa fa-chevron-circle-left" id="arrow-left-book"></i>
+    <div class = "bookBox">
+      <h2 class="bookTitle"><%= book.title%></h2>
+      <p class = "songAuthor"><%= book.author%></p>
+      <img class = "bookImg" src=<%=book.imgUrl%>>
+      <!-- <p class = "songStreams"><%= book.id%></p> -->
+      <p class = "type"><%=book.type%></p>
+      <p class = "textDesc"><%=book.description%></p>
+    </div>
+    <i class="fa fa-chevron-circle-right" id="arrow-right-book"></i>
+  </div>
+  <script src="../../js/arrows.js"></script>
