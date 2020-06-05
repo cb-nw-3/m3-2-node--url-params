@@ -3,27 +3,27 @@
 const express = require('express');
 const morgan = require('morgan');
 
-const { top50 } = require('./data/top50');
-const { popularArtist } = require('./data/popularArtist');
+const { books } = require('./data/books.js');
+// const { popularArtist } = require('./data/popularArtist');
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8010;
 const home = (req, res) => res.render('pages/home');
 const top50page = (req, res) => res.render('pages/top50', { top50 });
 const songPage = (req, res) => {
   const path = req.params[0].split('/');
-  console.log(path);
+  // console.log(path[0]);
   // console.log(path[1]);
 
   if (
     path[0] === 'song' &&
     path.length === 2 &&
-    parseInt(path[1]) >= 1 &&
-    parseInt(path[1]) <= 50 &&
-    path[1].length <= 2
+    parseInt(path[1]) > 1 &&
+    parseInt(path[1]) < 50 &&
+    path[1].length === 2
   ) {
     const song = top50.find((element) => element.rank === parseInt(path[1]));
     res.render('pages/song', { song });
-  } else if (path.length <= 3) {
+  } else {
     res.render('pages/fourOhFour', {
       title: 'I got nothing',
       path: req.originalUrl,
