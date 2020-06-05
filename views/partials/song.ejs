@@ -1,0 +1,14 @@
+<ul>
+    <% top50.forEach(function(result){ %>
+        <li><%= result.rank %>
+            <%=  %> 
+                <%= result.title %> 
+                    <%=  %>
+                        <%= result.artist %>
+                            <%=  %>
+                                <%= result.streams %>
+                                    <%=  %>
+                                        <%= result.publicationDate %>
+                            </li>
+    <%  }); %>
+</ul>
