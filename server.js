@@ -27,6 +27,17 @@ app.get('/top50/popular-artist', (req, res) => {
     top50: top50
   })
 })
+app.get('/top50/song/:songRank(\\d+)', (req, res) => {
+  let songRank = req.params.songRank - 1;
+  res.render('pages/songs', {
+    // if (top50[songRank]) {
+      title: `Song ${top50[songRank].rank}`,
+      song: top50[songRank]
+    // } else {
+    //   console.log('clicked');
+    // }
+  })
+})
 
 // handle 404s
 app.get('*', (req, res) => {
