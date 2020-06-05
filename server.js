@@ -55,6 +55,19 @@ const findBook = (arr, id) => {
   return currentBook;
 };
 
+const findSimilarBooks = (arr, type) => {
+  let similarBooks = [];
+
+  arr.forEach((book) => {
+    if (book.type === type) {
+      book.description = "-";
+      similarBooks.push(book);
+    }
+  });
+  console.log("similar books", similarBooks);
+  return similarBooks;
+};
+
 const express = require("express");
 
 const morgan = require("morgan");
@@ -133,6 +146,13 @@ app.get("/books/:id", (req, res) => {
       path: req.originalUrl,
     });
   }
+});
+
+app.get("/books/type/:type", (req, res) => {
+  res.render("pages/bookList.ejs", {
+    title: req.params.type + " books",
+    books: findSimilarBooks(books, req.params.type),
+  });
 });
 
 // handle 404s
