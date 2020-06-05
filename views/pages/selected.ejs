@@ -1,0 +1,15 @@
+<%- include('../partials/header', {title: title}) %>
+<section class="card">
+    <span><%- song.title %></span>
+    <span><%- song.artist %></span>
+    <span><%- song.streams %></span>
+</section>
+<section class="navigation">
+    <% if (song.rank - 1 >= 1) { %>
+        <a class="previous" href="<%- '/top50/song/' + (song.rank - 1) %>">Previous</a>
+    <% } %>
+    <% if (song.rank + 1 <= 50) { %>
+        <a class="next" href="<%- '/top50/song/' + (song.rank + 1) %>">Next</a>
+    <% } %>
+</section>
+<%- include('../partials/footer', {title: title}) %>
