@@ -1,7 +1,7 @@
 <section class="song-list">
     <ul>
         <% top50.forEach((song) => { %>
-            <li class="list-item">
+            <li class="song-item">
                 <div><span><%- song.rank %>#</span> <span>(<%- song.streams %>)</span></div>
                 <div><span><%- song.title %></span>  <span>By <%- song.artist %></span></div>
                 <div><span>Publication Date: <%- song.publicationDate %></span></div>

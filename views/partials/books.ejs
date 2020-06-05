@@ -1,0 +1,15 @@
+<section class="book-list">
+    <ul>
+        <% books.forEach((book) => { %>
+            <li class="book-item">
+                <div>
+                    <span><img src="<%- book.imgUrl %>" alt="book"></span>
+                    <span><%- book.title %></span>  
+                    <span>By <%- book.author %></span>
+                    <span>(<%- book.type %>)</span>
+                </div>
+                <div><%- book.description %></div>
+            </li>
+        <% }) %>
+    </ul>
+</section>

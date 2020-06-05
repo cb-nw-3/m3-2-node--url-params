@@ -3,6 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 
 const { top50 } = require("./data/top50");
+const { books } = require("./data/books");
 
 const PORT = process.env.PORT || 8000;
 
@@ -63,6 +64,30 @@ app.get("/top50/song/:number", (req, res) => {
   res.render("pages/selected.ejs", {
     title: "Song #" + rank,
     song: song,
+  });
+});
+
+// BOOKS
+app.get("/books", (req, res) => {
+  let types = [];
+  books.forEach((book) => {
+    if (!types.includes(book.type)) {
+      types.push(book.type);
+    }
+  });
+
+  let filteredBooks = books;
+  if (req.query.type && req.query.type !== "all") {
+    filteredBooks = filteredBooks.filter(
+      (book) => book.type.toLowerCase() === req.query.type.toLowerCase()
+    );
+  }
+
+  res.render("pages/books.ejs", {
+    title: "Library",
+    books: filteredBooks,
+    types: types,
+    defaultType: req.query.type,
   });
 });
 
