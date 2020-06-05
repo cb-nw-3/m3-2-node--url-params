@@ -1,0 +1,37 @@
+<%-include('../partials/header.ejs') %>
+<body>
+    <%let artistArray = []%>
+    <%top50.forEach(song => { %>
+        <%if(!artistArray.includes(song.artist)){%>
+            <%artistArray.push(song.artist)%>
+        <%}})%>
+
+        <%let artistTotal = []%>
+        <%artistArray.forEach(artist => {%> 
+            <%let accumulator = 0%>
+            
+            <%top50.forEach(song =>{%> 
+                <%if(song.artist === artist){%> 
+                    <%accumulator += song.streams%> 
+                    <%}%> 
+                    <%})%>
+                    <%artistTotal.push({artist, accumulator})%>
+                    <%})%>
+
+                    <%let max = 0;%>
+                    <%let maxArtist;%>
+                    <%artistTotal.forEach(entry =>{%>
+                        <%if(entry.accumulator > max){%>
+                            <%max = entry["accumulator"]%>
+                            <%maxArtist = entry["artist"]%>
+                            <%}%>
+                        <%})%>
+
+    <% top50.forEach(song => { %>
+        <%if(song.artist == maxArtist){%>
+            <%-include('../partials/song.ejs', {song:song})%>
+        <%}%>
+        <%})%>
+    <%-include('../partials/footer.ejs') %>
+</body>
+</html>
