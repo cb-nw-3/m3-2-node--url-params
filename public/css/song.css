@@ -1,0 +1,95 @@
+.song-list {
+  margin: 25px;
+}
+
+.song-item {
+  margin: 10px;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  display: flex;
+}
+
+.song-item div:nth-child(1) {
+  flex: 1;
+}
+
+.song-item div:nth-child(1) span:nth-child(1) {
+  font-weight: 900;
+  font-size: xx-large;
+  display: block;
+}
+
+.song-item div:nth-child(1) span:nth-child(2) {
+  font-size: medium;
+}
+
+.song-item div:nth-child(2) {
+  flex: 3;
+}
+
+.song-item div:nth-child(2) span:nth-child(1) {
+  font-size: large;
+  font-weight: 700;
+  display: block;
+}
+
+.song-item div:nth-child(2) span:nth-child(2) {
+  font-style: italic;
+}
+
+.song-item div:nth-child(3) {
+  flex: 2;
+  display: flex;
+}
+
+.song-item div:nth-child(3) span {
+  align-self: flex-end;
+  text-align: right;
+  font-size: small;
+  width: 100%;
+}
+
+.card {
+  margin: auto;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card span {
+  display: block;
+  margin: 5px;
+}
+
+.card span:nth-child(1) {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+  font-weight: 800;
+  font-size: xx-large;
+}
+
+.card span:nth-child(2) {
+  font-size: medium;
+}
+
+.card span:nth-child(3) {
+  font-size: 150px;
+  opacity: 0.5;
+}
+
+.navigation {
+  margin: auto;
+}
+
+.navigation a {
+  margin-right: 5px;
+  text-decoration: none;
+  border: 1px solid lightskyblue;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  width: 150px;
+  display: inline-block;
+}

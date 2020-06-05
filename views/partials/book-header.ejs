@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/song.css">
+    <link rel="stylesheet" href="/css/book.css">
+</head>
+<body>
+<header>
+    <!-- ejs templating is too confusing, I'm pre-selecting the dropdown value based on the currently selected type -->
+    <h1 style="display: inline;"><%= title %></h1>
+    <select class="type-select">
+        <option value="all" <% if (defaultType === 'all') { %>
+                <%- selected="selected" %>
+            <% } %> >All</option>
+        <% types.forEach(type => { %>
+            <option value="<%- type %>" <% if (defaultType === type) { %>
+                <%- selected="selected" %>
+            <% } %>  ><%- type[0].toUpperCase() + type.slice(1) %></option>
+        <% }) %>
+    </select>
+</header>
+
+<script>
+    let selectInput = document.querySelector(".type-select");
+    selectInput.addEventListener("change", (event) => {
+        let anchor = document.createElement("a");
+        anchor.setAttribute("href", "/books?type=" + event.target.value);
+        let body = document.body;
+        body.appendChild(anchor);
+        anchor.click();
+    });
+</script>
