@@ -4,6 +4,15 @@
   text-align: left;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.song-list-item:hover {
+  background-color: rgba(226, 224, 224, 0.904);
+}
+
 .song-container {
   display: flex;
 }
