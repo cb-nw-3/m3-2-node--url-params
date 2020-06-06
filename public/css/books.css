@@ -1,0 +1,23 @@
+.container{
+        display:flex;
+        padding: 1000px;
+        flex-direction: row;
+}
+
+ img{
+
+    border-radius: 2px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+li{
+    border-bottom: 2px solid grey;
+    padding: 20px;
+}
+
+p{
+    font-weight:bold;
+}

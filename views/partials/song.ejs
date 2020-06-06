@@ -1,0 +1,16 @@
+<ul>
+    <% top50.forEach(function(result){ %>
+       <li><div class='song'>
+        <p class='songRank'>
+            <span class='songRankNum'>#<%= result.rank %></span>
+            <span class='songRankStreamCount'>(<%= result.streams %> streams)<span>
+        </p>
+        <div class='songInfo'>
+            <p class='songInfoTitle'><%= result.title %></p>
+            <p class='songInfoArtist'>by <%= result.artist %></p>
+            <p class='songInfoPubDate'>publication date: <%= result.publicationDate %></p>
+        </div>
+    </div>
+                            </li>
+    <%  }); %>
+</ul>

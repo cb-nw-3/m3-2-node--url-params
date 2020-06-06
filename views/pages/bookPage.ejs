@@ -1,0 +1,16 @@
+<head>
+    <link rel="stylesheet" href="/css/book-page.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/typography.css">
+</head>
+
+<%- include( '../partials/header', { title: title }) %>
+<div class='main'>
+    <div class='bookPage'>
+         <h2 class='bookPageTitle'><%= book.id %></h2>`
+         <p class='bookPageArtist'><img src="<%= book.imgUrl %>" alt="<%= book.title %>" width="100" height="100"></p>
+         <p class='bookPageArtist'><%= book.title %></p>
+         <p class='bookPageArtist'><%= book.description %></p>
+    </div>
+</div>
+<%- include( '../partials/footer') %>

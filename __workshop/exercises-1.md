@@ -2,7 +2,7 @@
 
 ## 1.1
 
-Take a look at the `/data/top50.js`. It contain data on the top 50 songs streamed on Spotify.
+Take a look at the `/data/top50.js`. It contains data on the top 50 songs streamed on Spotify.
 
 We want to render this on our website.
 

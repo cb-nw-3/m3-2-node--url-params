@@ -1,4 +1,5 @@
-.songPage {
+  
+    .bookPage {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -9,7 +10,7 @@
     width: 400px;
 }
 
-.songPageTitle {
+    .bookPageTitle {
         border-bottom: 1px solid #ccc;
         font-size: 24px;
         margin-bottom: 8px;
@@ -17,11 +18,11 @@
         text-align: center;
     }
 
-.songPageArtist {
+    .bookPageArtist {
         text-align: center;
     }
 
-    .songPageStreamCount {
+    .bookPageStreamCount {
         flex: 1 0 auto;
         display: flex;
         justify-content: center;
