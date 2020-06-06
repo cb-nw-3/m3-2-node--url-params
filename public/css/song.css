@@ -5,7 +5,7 @@ ul {
 li {
   display: flex;
   border-bottom: 1px solid black;
-  height: 120px;
+  height: 140px;
   margin: 10px 0;
   padding: 10px 0;
 }
@@ -50,4 +50,8 @@ li {
 }
 .date {
   font-size: 12px;
+}
+.img-right {
+  height: 100%;
+  width: auto;
 }

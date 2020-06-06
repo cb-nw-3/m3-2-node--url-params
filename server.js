@@ -65,6 +65,27 @@ app.get('/books/:id', (req, res) => {
     })
   }
 })
+app.get('/books/type/:type', (req, res) => {
+  let checker = false;
+  books.forEach(item => {
+    if (item.type === req.params.type) {
+      checker = true;
+    }
+  })
+  if (checker) {
+    res.render('pages/bookType', {
+      title: `${req.params.type}`,
+      books: books
+    })
+  } else {
+    res.status(404);
+    res.render('pages/fourOhFour', {
+      title: 'Why are you looking for trouble...',
+      path: req.originalUrl
+    })
+  }
+})
+
 
 // handle 404s
 app.get('*', (req, res) => {
