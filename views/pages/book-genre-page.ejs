@@ -11,8 +11,10 @@
 </header>
 <ul style="margin: 20px;">
   <% booklist.forEach(book => { %>
-    <li class="books-item">   
+    <li class="books-item">
+      <a href="/books/<%=book.id%>">
         <h1><%= book.title %></h1>
+      </a>   
     </li>
   <% }) %>
 </ul>
