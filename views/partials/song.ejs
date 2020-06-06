@@ -1,0 +1,23 @@
+<% data.forEach( item => { %>
+
+<li>
+
+    <div class="rankBox">
+        <span class="itemRank">#<%= item.rank %></span>
+        <span class="itemStreamNums">(<%= item.streams %> streams)</span>
+    </div>
+
+    <div class="rightContainer">
+        <div class="songBox">
+            <span class="itemTitle"><%= item.title %></span>
+            <span class="itemArtist">by <%= item.artist %></span>
+        </div>
+
+        <div class="dateBox">
+            <span class="itemDate">publication date: <%= item.publicationDate %></span>
+        </div>
+    </div>
+
+</li>
+
+<% }) %>
