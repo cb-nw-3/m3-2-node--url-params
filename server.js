@@ -81,13 +81,23 @@ app.get('/books', (req, res) => {
 });
 
 //#2.1 books by id endpoint
+// app.get("/books/:bookId/authors/:authorId")
+// /books/102/authors/400
+// { bookId: "102", authorId: 400 }
 app.get("/books/:id", (req, res) => {
-    const id = req.params.id - 1;
+    const id = req.params.id;
+    const bookBeingRequested = books.find(function(book) {
+        
+        if (book.id === Number(id)) {
+            return true;
+        }
+        
+    });
     
-    if (books[id]) {
+    if (bookBeingRequested) {
       res.render("pages/booksPage", {
-        title: `Book ID#${books[id].id}`,
-        books: books[id],
+        title: `Book ID#${bookBeingRequested.id}`,
+        books: bookBeingRequested,
       });
     } else {
       res.status(404);
