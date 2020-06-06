@@ -99,13 +99,6 @@ app.get("/allbooks/book/:id", (req, res) => {
 });
 
 app.get("/booktype/:type", (req, res) => {
-  /*const authors = [];
-
-  books.forEach((book) => {
-    if (!authors.includes(book.type)) {
-      authors.push(book.type);
-    }
-  });*/
   res.render("pages/booktype", {
     title: `Type: ${req.params.type}`,
     books: books.filter((book) => book.type === req.params.type),
