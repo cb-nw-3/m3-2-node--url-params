@@ -62,10 +62,20 @@ app.get("/top50/popular-artist", (req, res) => {
 
 //single song
 app.get("/top50/song/:rank", (req, res) => {
-  res.render("./pages/song", {
-    title: `Song #${song.rank}`,
-    top50: top50,
-  });
+  const rank = Number(req.params.rank);
+  let song = top50.find((song) => song.rank === rank);
+
+  if (song) {
+    res.render("./pages/singleSong", {
+      title: `Song #${rank}`,
+      song: song,
+    });
+  } else {
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
 });
 
 // handle 404s

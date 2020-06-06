@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-song-container {
+  display: flex;
+  flex: 0 auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 65vh;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 2px;
+}
+
+.single-song-title {
+  flex: 1 auto;
+  margin-top: 30px;
+  border-bottom: 1px solid black;
+}
+.single-song-artist {
+  margin-top: 10px;
+  flex: 1 auto;
+}
+.single-song-streams {
+  flex: 5 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 250px;
+  color: rgb(202, 199, 199);
+}
