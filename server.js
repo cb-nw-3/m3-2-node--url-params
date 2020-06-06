@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const express = require('express');
 
 const { top50 } = require('./data/top50');
+const { books } = require('./data/books');
 
 const PORT = process.env.PORT || 8000;
 
@@ -39,8 +40,15 @@ app.get('/top50/song/:songRank(\\d+)', (req, res) => {
     res.render('pages/fourOhFour', {
       title: 'Why are you looking for trouble...',
       path: req.originalUrl
-    });
+    })
   }
+})
+
+app.get('/allBooks', (req, res) => {
+  res.render('pages/books', {
+    title: "25 Must Read Books",
+    books: books
+  })
 })
 
 // handle 404s

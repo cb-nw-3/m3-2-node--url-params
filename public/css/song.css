@@ -5,7 +5,7 @@ ul {
 li {
   display: flex;
   border-bottom: 1px solid black;
-  height: 100px;
+  height: 120px;
   margin: 10px 0;
   padding: 10px 0;
 }
@@ -39,6 +39,14 @@ li {
 }
 .artist-top50 {
   font-style: italic;
+}
+.title-book {
+  font-weight: bold;
+}
+.artist-book {
+  font-style: italic;
+  font-size: 8px;
+  line-height: 20px;
 }
 .date {
   font-size: 12px;
