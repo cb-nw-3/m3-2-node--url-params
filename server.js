@@ -25,6 +25,35 @@ app.get('/top50', (req, res) => {
     });
 })
 
+//#1.5
+app.get("/top50/popular-artist", (req, res) => {
+    let artistsCount = {};
+    top50.forEach((song) => {
+      if (song.artist in artistsCount) {
+        artistsCount[song.artist]++;
+      } else {
+        artistsCount[song.artist] = 1;
+      }
+    });
+  
+    let mostPopularArtist = "";
+    let artistAppearances = 0;
+  
+    Object.keys(artistsCount).forEach((artist) => {
+      if (artistsCount[artist] > artistAppearances) {
+        artistAppearances = artistsCount[artist];
+        mostPopularArtist = artist;
+      }
+    });
+
+    let popular = top50.filter((song) => song.artist === mostPopularArtist);
+    res.render("pages/top50", {
+      title: "Most Popular Artist",
+      top50: popular,
+    });
+  });
+
+
 
 // handle 404s
 app.get('*', (req, res) => {
