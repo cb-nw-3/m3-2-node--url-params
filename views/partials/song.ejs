@@ -1,0 +1,5 @@
+<ul class="songList">
+    <% top50.forEach(function(item) { %>
+        <li>#<%- item.rank %> (<%- item.streams %> streams) <%- item.title %> <%- item.artist %> Viewed <%- item.publicationDate %> </li>
+        <% }); %>
+    </ul>

@@ -9,7 +9,6 @@ const q1 = (req, res) => {
   const title = "Top 50 Songs Streamed on Spotify";
   res.render("./pages/top50", { title, top50 });
 };
-top50.forEach(function (item) {});
 
 const app = express();
 
