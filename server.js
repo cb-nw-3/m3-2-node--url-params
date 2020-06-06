@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 
 const { top50 } = require('./data/top50');
+const { books } = require('./data/books');
 
 const PORT = process.env.PORT || 8000;
 
@@ -76,6 +77,26 @@ app.get('/top50/song/:songNum', (req, res) => {
     }
 
 });
+
+// ========================= BOOK ROUTES HERE ============================
+
+// all books view
+
+app.get('/books', (req, res) => {
+    res.render('pages/books', { data: books });
+})
+
+// individual book view
+
+app.get('/books/id/:bookId', (req, res) => {
+    res.send("all books view");
+})
+
+// book type view
+
+app.get('/books/type/:type', (req, res) => {
+    res.send("all books view");
+})
 
 // handle 404s
 app.get('*', (req, res) => {
