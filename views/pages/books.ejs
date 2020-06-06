@@ -3,18 +3,18 @@
 <head>
 <%- include( '../partials/header') %>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/public/css/books.css">
+  <link rel="stylesheet" href="/css/books.css">
 </head>
 <body>
     <ul>
         <% books.forEach(function(book){ %>
-            <li>
+        <li>
             <%= book.id %>
-                <p><%= book.type %></p>
+                <p>Genre: <%= book.type %></p>
                     <p class = 'image'><img src="<%= book.imgUrl %>" alt="<%= book.title %>" width="100" height="100"></p>
-                        <p><%= book.title %></p>
-                                <p><%= book.author %></p>
-                                    <p><%= book.description %></p>
+                        <p>Title: <%= book.title %></p>
+                                <p>Author: <%= book.author %></p>
+                                    <p>Synopsis: <%= book.description %></p>
            
                                 </li>
         <%  }); %>

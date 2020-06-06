@@ -5,7 +5,7 @@
 }
 
  img{
-    border-bottom: 100px solid grey;
+
     border-radius: 2px;
 }
 
@@ -15,6 +15,7 @@
 
 li{
     border-bottom: 2px solid grey;
+    padding: 20px;
 }
 
 p{
