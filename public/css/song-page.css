@@ -1,0 +1,42 @@
+.songPageCont {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+	background: whitesmoke;
+}
+
+.backdrop {
+	background-color: ghostwhite;
+	padding: 250px;
+	border-radius: 25px;
+	box-shadow: 3px 4px 23px 0px #ccc;
+}
+
+.songPageTitle {
+	position: relative;
+	font-size: 55px;
+	border-bottom: 1px grey solid;
+	color: black;
+	text-align: center;
+}
+
+.songPageArtist {
+	text-align: center;
+	font-size: 25px;
+	font-style: italic;
+	padding-top: 15px;
+	color: black;
+}
+
+.songPageStreams {
+	text-align: center;
+	font-size: 100px;
+	padding-top: 5px;
+	color: silver;
+}
+
+.songPageTop {
+	position: relative;
+}

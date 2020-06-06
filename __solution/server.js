@@ -26,6 +26,7 @@ app.get('/top50', (req, res) => {
 });
 
 app.get('/top50/popular-artist', (req, res) => {
+    console.log('test')
     const artists = [];
     const artistCount = {};
     top50.forEach(song => {

@@ -1,0 +1,23 @@
+.liCont {
+    margin: 25px 15px 25px 15px;
+    display: flex;
+    border-bottom: 1px silver solid;
+}
+
+.liLeft {
+    padding-right: 50px;
+}
+
+.songRank {
+    font-size: 35px;
+    text-align: center;
+}
+
+.songStreams {
+    font-size: 15px;
+}
+
+.songArtist {
+    font-style: italic;
+}
+
