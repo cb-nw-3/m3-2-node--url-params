@@ -1,0 +1,84 @@
+.booklist
+{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.book-item
+{
+width: 450px;
+padding: 30px;
+margin-bottom: 20px;
+border-radius: 5px;
+box-shadow: 3px 4px 23px 0px #ccc;
+
+}
+
+.book-image
+{
+  width: 200px;
+}
+
+
+.book-title
+{
+  font-size: 36px;
+}
+
+.book-author
+{
+  font-size: 22px;
+}
+
+.book-description
+{
+  font-family:  'Roboto Slab', san-serif;
+
+}
+
+
+.genre-book-item
+{
+  width: 700px;
+padding: 10px;
+margin-bottom: 20px;
+border-radius: 5px;
+box-shadow: 3px 4px 23px 0px #ccc;
+display: flex;
+flex-direction: row;
+text-align: left;
+align-items: flex-start;
+
+}
+
+.genre-details
+{
+  display: flex;
+flex-direction: column;
+align-items: baseline;
+
+}
+
+
+.genre-book-title
+{
+  padding: 20px;
+  font-size: 22px;
+}
+
+.genre-book-author
+{
+  padding: 20px;
+
+  font-size: 14px;
+}
+
+.genre-book-image
+{
+  height: 150px;
+}
+

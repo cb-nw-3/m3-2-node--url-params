@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+
+<div class ='main'>
+    
+    <ol>
+        <% songsToList.forEach(song => {%>
+
+            <li>
+                <div class='song'>
+                    <p class='rank'>
+                        <span class='rank--num'>#<%= song.rank %></span>
+                        <span class='rank--stream-count'>(<%= song.streams %> streams)<span>
+                        </p>
+                        <div class='info'>
+                            <p class='info--title'><%= song.title %></p>
+                            <p class='info--artist'>by <%= song.artist %></p>
+                            <p class='info--pub-date'>publication date: <%= song.publicationDate %></p>
+                        </div>
+                    </div>
+                    
+                </li>
+            <% }); %> 
+        </ol>
+        
+</div>
+        
+<%- include('../partials/footer') %>

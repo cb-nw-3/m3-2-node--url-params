@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+
+<div class ='main'>
+    
+    <ol class="box">
+        <% songsToList.forEach(song => {%>
+
+            <%- include('../partials/songBox', { song: song }) %>
+
+
+            <% }); %> 
+        </ol>
+        
+</div>
+        
+<%- include('../partials/footer') %>
