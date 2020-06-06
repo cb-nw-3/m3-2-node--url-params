@@ -1,0 +1,15 @@
+<%- include('../partials/header', {title: "Song #" + data.rank}) %>
+
+<div class="soloSongContainer">
+
+    <div class="soloSongBox">
+        <h2><%= data.title %></h2>
+
+        <h3><%= data.artist %></h3>
+
+        <p id="streamBox"><%= data.streams %></p>
+    </div>
+
+</div>
+
+<%- include('../partials/footer'); %>

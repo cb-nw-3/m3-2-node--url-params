@@ -63,10 +63,19 @@ app.get('/top50/popular-artist', (req, res) => {
     res.render("pages/popular-artist", { data: popularArtistSongs })
 })
 
-app.get('/top50/:songNum', (req, res) => {
-    res.send('yep. it\'s a song.')
-}
+app.get('/top50/song/:songNum', (req, res) => {
 
+    if (top50[req.params.songNum - 1] === undefined) {
+        console.log("what");
+        res.render('pages/fourOhFour', {
+            title: 'I got nothing',
+            path: req.originalUrl
+        });
+    } else {
+        res.render("pages/song", { data: top50[req.params.songNum - 1] });
+    }
+
+});
 
 // handle 404s
 app.get('*', (req, res) => {
