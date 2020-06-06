@@ -1,0 +1,11 @@
+<%- include( '../partials/header', { title: title }) %>
+<div class='main'>
+    <ol>
+        <% books.forEach(book => { %>
+        <li> <%= book.title %>
+            <div>By: <%= book.author %></div>   
+            <img src='<%= book.imgUrl %>'/>' </li>
+        <% }); %>
+        </ol>
+    </div> 
+<%- include( '../partials/footer') %>

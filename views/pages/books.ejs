@@ -1,24 +1,10 @@
-<%- include ('../partials/header', {title: title}) %>
-
-<div class='main'></div>
-  
-    <ol>
-        <li><% books.forEach(function(books){ %>
-            <div class="each-listing">
-                <div class="rank-container">
-                    <div class="rank">#<%- books.id %></div>
-                    <div class="type"><%- books.type %></div>
-                </div>
-                <div class="song-container">
-                    <div class="song-title"><%- books.title %> </div>
-                    <div class="author">By <%- books.author %></div>
-                    <div class="description"><%- books.description %></div>
-                    
-                </div>
-                <img src="<%- books.imgUrl %>" alt="book cover">
-            </div>
-        <% }) %></li>
-    </ol>
+<%- include( '../partials/header', { title: title }) %>
+<div class='main'>
+    <img src="<%- books.imgUrl %>" alt="book cover">
+    <div class='song-page1'>
+         <h2 class='song-page--title'><%= books.title %></h2>
+         <p class='song-page--artist'>By <%= books.author %></p>
+         
+    </div>
 </div>
-
-<%- include ('../partials/footer') %>
+<%- include( '../partials/footer') %>

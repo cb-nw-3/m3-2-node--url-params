@@ -87,11 +87,9 @@ app.get('/books', (req, res) => {
 app.get("/books/:id", (req, res) => {
     const id = req.params.id;
     const bookBeingRequested = books.find(function(book) {
-        
         if (book.id === Number(id)) {
             return true;
         }
-        
     });
     
     if (bookBeingRequested) {
@@ -108,6 +106,14 @@ app.get("/books/:id", (req, res) => {
     }
   });
 
+
+  //#2.1 books by type
+app.get("/books/type/:type", (req, res) => {
+    res.render("pages/booktype", {
+      title: `Type: ${req.params.type}`,
+      books: books.filter((book) => book.type === req.params.type),
+    });
+});
 
 // handle 404s
 app.get('*', (req, res) => {
