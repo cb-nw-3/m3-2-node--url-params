@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+
+<div class='main'>
+
+    <div class='booklist'>
+        <% books.forEach(book => {%>
+        <div class="genre-book-item">
+            <img class='genre-book-image' src=<%= book.imgUrl %> alt="">
+            <div class='genre-details'>
+                
+                <p class='genre-book-title'><%= book.title %> </p>
+                <p class='genre-book-author'><%= book.author %> </p>
+            </div>
+        </div>
+
+        <% }); %>
+    </div>
+
+</div>
+
+<%- include('../partials/footer') %>

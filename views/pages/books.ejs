@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+
+<div class ='main'>
+    
+    <div class='booklist'>
+        <% books.forEach(book => {%>
+            <div class="book-item">
+                <p class='book-title'>
+                        
+                        <%= book.title %> </p>
+                    <p class='book-author'><%= book.author %> </p>
+
+                        
+                
+                        <img class='book-image' src=<%= book.imgUrl %> alt="">
+                        <p class='book-description'><%= book.description %></p>
+                        <p class='book-id'>ID:<a href="/books/<%= book.id %>"><%= book.id %></a></p>
+                        <p class='book-type'>Genre: <a href="/books/<%= book.type %>"><%= book.type %></a>
+                        </p>
+
+
+                    </div>
+                    
+            <% }); %> 
+    </div>
+
+</div>
+        
+<%- include('../partials/footer') %>
