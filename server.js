@@ -98,22 +98,19 @@ app.get("/allbooks/book/:id", (req, res) => {
   }
 });
 
-app.get("/allbooks/booktype/:type", (req, res) => {
-  const type = req.params.type;
-  if (books[type]) {
-    res.render("pages/booktype", {
-      title: `Type:${books[type].type}`,
-      books: books[type],
-    });
-  } else {
-    res.status(404);
-    res.render("pages/fourOhFour", {
-      title: "I got nothing",
-      path: req.originalUrl,
-    });
-  }
-});
+app.get("/booktype/:type", (req, res) => {
+  /*const authors = [];
 
+  books.forEach((book) => {
+    if (!authors.includes(book.type)) {
+      authors.push(book.type);
+    }
+  });*/
+  res.render("pages/booktype", {
+    title: `Type: ${req.params.type}`,
+    books: books.filter((book) => book.type === req.params.type),
+  });
+});
 // handle 404s
 app.get("*", (req, res) => {
   res.status(404);
