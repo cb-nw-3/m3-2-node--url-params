@@ -6,6 +6,8 @@ const express = require('express');
 
 const { top50 } = require('./data/top50');
 
+const { books } = require('./data/books');
+
 const PORT = process.env.PORT || 8000;
 
 const app = express();
@@ -16,6 +18,7 @@ app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 
 // endpoints here
+// ############################ EXERCISE 1 #################################
 app.get('/top50', (req,res) => {
   const title = "Top 50 Songs Streamted on Spotify"
   res.render('pages/top50', {title: title, rank: top50});
@@ -33,6 +36,7 @@ app.get('/top50', (req,res) => {
 //     return 0;
 //   })});
 // })
+
 
 app.get('/top50/popular-artist', (req,res) => {
   const title = "Most Popular Artist"
@@ -92,6 +96,13 @@ for(let i = 1; i<=50; i++) {
   }) 
 
 }
+
+// ############################ EXERCISE 2.1 #################################
+
+app.get('/books', (req,res) => {
+  const title = "My Books";
+  res.render('pages/allBooks', {title: title, booklist: books});
+})
 
 // handle 404s
 app.get('*', (req, res) => {
