@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<% if (book.id === 101) { %>
+  <div style="width: 75px; height: 50px; position: absolute; z-index: 2; top: 5px; right: 85px; background: #fafafa;"></div>
+<% } else if (book.id === 125) { %>
+  <div style="width: 75px; height: 50px; position: absolute; z-index: 2; top: 5px; right: 5px; background: #fafafa;"></div>
+<% } %>
+
+<form action="<%= `http://localhost:8000/books/${book.id - 99}` %>">
+  <button class="next-button">Next</button>
+</form>
+
+<form action="<%= `http://localhost:8000/books/${book.id - 101}` %>">
+  <button class="previous-button">Previous</button>
+</form>
+
+<div class="book-page">
+  <h2 class="title"><%- book.title %> by <%- book.author %></h2>
+  <p class="artist"><%- book.description %></p>
+  <img src="<%= book.imgUrl %>">
+</div>
+
+<%- include('../partials/footer') %>

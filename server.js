@@ -44,11 +44,26 @@ app.get('/top50/song/:songRank(\\d+)', (req, res) => {
   }
 })
 
-app.get('/allBooks', (req, res) => {
+app.get('/books', (req, res) => {
   res.render('pages/books', {
     title: "25 Must Read Books",
     books: books
   })
+})
+app.get('/books/:id', (req, res) => {
+  let bookID = req.params.id -1;
+  if (books[bookID]) {
+    res.render('pages/book', {
+      title: `${books[bookID].title} - ${books[bookID].type}`,
+      book: books[bookID]
+    })
+  } else {
+    res.status(404);
+    res.render('pages/fourOhFour', {
+      title: 'Why are you looking for trouble...',
+      path: req.originalUrl
+    })
+  }
 })
 
 // handle 404s

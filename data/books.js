@@ -69,7 +69,7 @@ const books = [
         id: 109,
         type: 'fiction',
         imgUrl: 'http://prodimage.images-bn.com/pimages/9780547928180.jpg',
-        title: 'The Lord of the Rings,',
+        title: 'The Lord of the Rings',
         author: 'J.R.R. Tolkien',
         description: 'If you’re going to read a fantasy, read the ur-fantasy, the godfather of the entire genre in its modern incarnation. If you love fantasy but haven’t read LOTR, you might be missing out—everything you love about the genre has its roots here (even if only to reject everything Tolkien laid down), and few fantasy epics have as deep a backstory.'
     },
