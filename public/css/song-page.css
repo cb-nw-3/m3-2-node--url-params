@@ -12,7 +12,7 @@ ol {
 }
 
 .indexWrapper {
-  min-width: 75px;
+  min-width: 85px;
   padding-left: 8px;
   padding-top: 12px;
 }
@@ -54,5 +54,5 @@ ol {
 }
 
 .date::before {
-  content: 'publication date: ';
+  content: "publication date: ";
 }

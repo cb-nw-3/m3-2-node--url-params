@@ -1,0 +1,29 @@
+<ol>
+  <% for (key in bookTypes){ %>
+  <% let index = 1; %> 
+  <li class = "bookType"><h2><%= key.toUpperCase() %></h2></li>
+    <ol>
+      <% books.forEach((element) => { %>
+        <% if (key === element.type){ %> 
+          <li class = "line">
+            <span class = "indexWrapper">
+              <div class="index">#<%= index++ %></div>
+              <div class="ids">(ID#: <%= element.id %>)</div>
+            </span>
+            <span>
+              <img class = "allBooks" src=<%=element.imgUrl%>>
+            </span>
+            <span class ="dataWrapperBook">
+              <div class = "title"><h3><%= element.title%></h3></div>
+              <div class = "autor"><p>autor: <i><%=element.author%></i></p></div>
+            </span> 
+            <span class = "desc">
+              <div class = "type"><%=element.type%></div>
+              <div class = "textDesc"><%=element.description%></div>
+            </span>
+          </li>
+        <% } %> 
+        <% }); %>
+    </ol>
+  <% }; %>
+</ol>

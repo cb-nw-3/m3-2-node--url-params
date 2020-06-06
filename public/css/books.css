@@ -43,3 +43,11 @@
 .allBooks {
   height: 100px;
 }
+
+.bookType {
+  font-weight: bolder;
+  text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8,
+    2px 2px 2px rgba(206, 89, 55, 0);
+  color: #070328;
+  background: #ffffff;
+}
