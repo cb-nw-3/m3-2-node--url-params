@@ -1,7 +1,7 @@
 <div class='main'>
     <ol>
         <% books.forEach(book => { %>
-        <li><%= book.title %> <%= book.author %> <img src='<%= book.imgUrl %>'/>' </li>
+        <li> <%= book.title %>, By: <%= book.author %>   <img src='<%= book.imgUrl %>'/>' </li>
         <% }); %>
         </ol>
     </div>
