@@ -72,13 +72,31 @@ app.get('/top50/song/:rank', (req, res) => {
     }
 });
 
-//#2.1 books endpoint
+//#2.1 all books endpoint
 app.get('/books', (req, res) => {
     res.render('pages/books', {
-        title: "Books",
+        title: "Books Recommended by Jenny",
         books: books
     });
 });
+
+//#2.1 books by id endpoint
+app.get("/books/:id", (req, res) => {
+    const id = req.params.id - 1;
+    
+    if (books[id]) {
+      res.render("pages/booksPage", {
+        title: `Book ID#${books[id].id}`,
+        books: books[id],
+      });
+    } else {
+      res.status(404);
+      res.render("pages/fourOhFour", {
+        title: "I got nothing",
+        path: req.originalUrl,
+      });
+    }
+  });
 
 
 // handle 404s
