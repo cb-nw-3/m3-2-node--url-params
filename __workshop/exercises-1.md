@@ -33,6 +33,10 @@ Once you've completed 1.1 and 1.2, you should have something like this.
 
 ![](../__lecture/assets/top50_1.2.png)
 
+<% top50.forEach(function(top50){ %>
+            <li>Number <%- top50.rank %>. <%- top50.title %></li>
+        <% }) %>
+
 ## 1.3
 
 It is better practice to split our code into _partials_ that have only one job to do.
@@ -42,6 +46,10 @@ It is better practice to split our code into _partials_ that have only one job t
 
 ![](../__lecture/assets/top50_1.3.png)
 
+<% top50.forEach(function(top50){ %>
+            <li>#<%- top50.rank %> (<%- top50.streams %> streams)<%- top50.title %><%- top50.artist %><%- top50.publicationDate %></li>
+        <% }) %>
+        
 ## 1.4
 
 Time to style the `<li>`s to be a little more readable / presentable.

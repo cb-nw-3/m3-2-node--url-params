@@ -2,10 +2,16 @@
 
 const morgan = require('morgan');
 
+//##1.2 requiring the 'top50' file
 const { top50 } = require('./data/top50');
+//#2.1
+const { books } = require('./data/books');
+
+
 
 const PORT = process.env.PORT || 8000;
 
+const express = require('express')
 const app = express();
 
 app.use(morgan('dev'));
@@ -14,9 +20,103 @@ app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 
 // endpoints here
+app.get('/top50', (req, res) => {
+    res.render('pages/top50', {
+        title: 'Top 50 Songs Streamed on Spotify',
+        top50: top50
+    });
+})
+
+//#1.5
+app.get("/top50/popular-artist", (req, res) => {
+    let artistsCount = {};
+    top50.forEach((song) => {
+      if (song.artist in artistsCount) {
+        artistsCount[song.artist]++;
+      } else {
+        artistsCount[song.artist] = 1;
+      }
+    });
+  
+    let mostPopularArtist = "";
+    let artistAppearances = 0;
+  
+    Object.keys(artistsCount).forEach((artist) => {
+      if (artistsCount[artist] > artistAppearances) {
+        artistAppearances = artistsCount[artist];
+        mostPopularArtist = artist;
+      }
+    });
+
+    let popular = top50.filter((song) => song.artist === mostPopularArtist);
+    res.render("pages/top50", {
+      title: "Most Popular Artist",
+      top50: popular,
+    });
+  });
+
+//#1.6
+app.get('/top50/song/:rank', (req, res) => {
+    const rank = req.params.rank - 1;
+    if (top50[rank]) {    
+        res.render('pages/songPage', {
+            title: `Song #${top50[rank].rank}`,
+            song: top50[rank]
+        });
+    } else {
+        res.status(404);
+        res.render('pages/fourOhFour', {
+            title: 'I got nothing',
+            path: req.originalUrl
+        });
+    }
+});
+
+//#2.1 all books endpoint
+app.get('/books', (req, res) => {
+    res.render('pages/books', {
+        title: "Books Recommended by Jenny",
+        books: books
+    });
+});
+
+//#2.1 books by id endpoint
+// app.get("/books/:bookId/authors/:authorId")
+// /books/102/authors/400
+// { bookId: "102", authorId: 400 }
+app.get("/books/:id", (req, res) => {
+    const id = req.params.id;
+    const bookBeingRequested = books.find(function(book) {
+        if (book.id === Number(id)) {
+            return true;
+        }
+    });
+    
+    if (bookBeingRequested) {
+      res.render("pages/booksPage", {
+        title: `Book ID#${bookBeingRequested.id}`,
+        books: bookBeingRequested,
+      });
+    } else {
+      res.status(404);
+      res.render("pages/fourOhFour", {
+        title: "I got nothing",
+        path: req.originalUrl,
+      });
+    }
+  });
+
+
+  //#2.1 books by type
+app.get("/books/type/:type", (req, res) => {
+    res.render("pages/booktype", {
+      title: `Type: ${req.params.type}`,
+      books: books.filter((book) => book.type === req.params.type),
+    });
+});
 
 // handle 404s
-app.git('*', (req, res) => {
+app.get('*', (req, res) => {
     res.status(404);
     res.render('pages/fourOhFour', {
         title: 'I got nothing',
@@ -24,4 +124,4 @@ app.git('*', (req, res) => {
     });
 });
 
-get.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
