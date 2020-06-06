@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<ul>
+  <% let bookType = []; %>
+<!-- loop through books and push in array -->
+<!-- add all books of same type to the array -->
+  <% books.forEach(item => { %>
+    <% if (item.type === title) { %>
+      <% bookType.push(item); %>
+    <% } %>
+  <% }) %>
+<!-- print out every book on page -->
+  <% bookType.forEach(item => { %>
+    <li>
+      <div class="left">
+        <div class="rank"><%- item.id %></div> 
+        <div class="stream"><%- item.type %></div>
+      </div> 
+      <div class="middle">
+        <div class="title-book"><%- item.title %> by <%- item.author %></div> 
+        <div class="artist-book"><%- item.description %></div>
+      </div>
+      <div class="right"><img src="<%= item.imgUrl %>" class="img-right"></div>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('../partials/footer') %>

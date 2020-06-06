@@ -1,0 +1,15 @@
+<ul>
+  <% books.forEach(item => { %>
+    <li>
+      <div class="left">
+        <div class="rank"><%- item.id %></div> 
+        <div class="stream"><%- item.type %></div>
+      </div> 
+      <div class="middle">
+        <div class="title-book"><%- item.title %> by <%- item.author %></div> 
+        <div class="artist-book"><%- item.description %></div>
+      </div>
+      <div class="right"><img src="<%= item.imgUrl %>" class="img-right"></div>
+    </li>
+  <% }) %>
+</ul>
