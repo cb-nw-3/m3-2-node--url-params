@@ -94,11 +94,6 @@ app.get("/books", (req, res) => {
 //books by id
 app.get("/book/:id", (req, res) => {
     const id = req.params.id;
-    books.forEach((book) => {
-        console.log(book.id);
-        console.log(book.id == id);
-    });
-    // console.log("hello", books);
     const book = books.find((book) => book.id == id);
     if (book) {
         const title = `${book.title}`;
@@ -113,6 +108,25 @@ app.get("/book/:id", (req, res) => {
             path: req.originalUrl,
         });
     }
+});
+
+//books by type
+app.get("/books/type/:type", (req, res) => {
+    const type = req.params.type;
+    const bookType = books.filter((book) => book.type === req.params.type);
+
+    function typeofBooks(books, type) {
+        if (books.type === type) {
+            let groupedBooks = [];
+            groupedBooks.push(type);
+        }
+        return groupedBooks;
+    }
+
+    res.render("pages/books", {
+        title: type,
+        books: bookType,
+    });
 });
 
 // handle 404s
