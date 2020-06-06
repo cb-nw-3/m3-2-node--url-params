@@ -1,0 +1,23 @@
+<%- include ('../partials/header') %>
+
+<!-- <div class='main'>
+    <ol>
+        <%# top50.forEach(( song ) => { %>
+            <li>#<%#- Object.keys(song).map(key => `${song[key]} `).join(" ") %> </li>
+        <%# }) %>
+    </ol>
+</div> -->
+
+<!-- <div class='main'>
+    <%# top50.forEach(({ rank, title, artist, streams, publicationDate }) => { %>
+        <%#- include('../partials/song', { rank, title, artist, streams, publicationDate  }) %>
+    <%# }) %>
+</div> -->
+
+<div class='main'>
+    <% top50.forEach( song  => { %>
+        <%- include('../partials/song', { song }) %>
+    <% }) %>
+</div>
+
+<%- include ('../partials/footer') %>
