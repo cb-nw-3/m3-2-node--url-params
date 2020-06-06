@@ -1,0 +1,44 @@
+.each-listing {
+    display: flex;
+    border-bottom: 1px solid black;
+    margin-left: 20px;
+    
+}
+
+.rank-container {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+
+
+.rank {
+    font: 50px bold;
+}
+
+.streams {
+    font-size: 10px;
+}
+
+.song-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.song-title {
+    padding-top: 10px;
+    font: 25px;
+    font-weight: bold;
+}
+
+.artist {
+    font: 25px;
+    font-style: italic;
+}
+
+.publication {
+    text-align: right;
+    padding: 10px;
+}
