@@ -1,0 +1,11 @@
+<%- include('../partials/header', {title: title}) %>
+<div class='main'>
+    <div>
+        <h2> <%= song.title %></h2>
+        <p>By <%= song.artist %></p>
+        <p> (<%= song.streams %> streams)</p>
+        <p>Date Published: <%= song.publicationDate %></p>
+    </div>
+</div>
+
+<%- include('../partials/footer', {}) %>

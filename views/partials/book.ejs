@@ -1,0 +1,7 @@
+<div class='main'>
+    <ol>
+        <% books.forEach(book => { %>
+        <li>ID# <%= book.id %>. <%= book.title %> <%= book.type %> <%= book.author %> <%= book.description %> <img src='<%= book.imgUrl %>'/>' </li>
+        <% }); %>
+        </ol>
+    </div>
