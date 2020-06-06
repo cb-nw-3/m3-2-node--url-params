@@ -4,6 +4,8 @@ const morgan = require('morgan');
 
 //##1.2 requiring the 'top50' file
 const { top50 } = require('./data/top50');
+//#2.1
+const { books } = require('./data/books');
 
 
 
@@ -68,6 +70,14 @@ app.get('/top50/song/:rank', (req, res) => {
             path: req.originalUrl
         });
     }
+});
+
+//#2.1 books endpoint
+app.get('/books', (req, res) => {
+    res.render('pages/books', {
+        title: "Books",
+        books: books
+    });
 });
 
 
