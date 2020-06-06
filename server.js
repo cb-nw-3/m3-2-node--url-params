@@ -113,26 +113,80 @@ console.log(books.length);
 //   });
 // }
 
+//render each individual book
 app.get("/books/:id", (req, res) => {
-  //create a list of possible ids
+  //conver param id into number
   let idParams = Number(req.params.id);
+
+  //convert all possible book id into an array
   const id = books.map((book) => book.id);
+
+  //obtain the book content by id using filter
   let bookPage = books.filter((book) => book.id === idParams);
+
+  //define the tital of the page by book id
   let title = `Book #${idParams}`;
 
+  //for navigation functionality, check if it is the first or last book
   let isLastPage = idParams === 125;
   let isFirstPage = idParams === 101;
 
-  console.log(bookPage);
+  //console.log(bookPage);
   //console.log(id);
-  console.log(req.params.id);
+  //console.log(req.params.id);
 
+  //if the route page id exists then render, else 404
   if (id.includes(idParams)) {
     res.render("pages/book-page", {
       title: title,
       booklist: bookPage,
       isLastPage: isLastPage,
       isFirstPage: isFirstPage,
+    });
+  } else {
+    res.status(404);
+    res.redirect("/404");
+  }
+  //res.send(req.params.id);
+});
+
+//create an empty array, to store genre types
+let count = {};
+
+//count the occurences of each book type
+books.forEach((book) => {
+  count[book.type] = (count[book.type] || 0) + 1;
+});
+
+let bookGenre = Object.keys(count);
+//console.log(bookGenre);
+
+//this will generate a page will a list of all possible genres
+app.get("/genre", (req, res) => {
+  const title = "Book Genres";
+
+  res.render("pages/book-genre", {
+    title: title,
+    bookGenre: bookGenre,
+  });
+});
+
+app.get("/genre/:id", (req, res) => {
+  //obtain the book content by id using filter
+  let booklist = books.filter((book) => book.type === req.params.id);
+
+  //define the tital of the page by book id
+  let title = `Genre: ${req.params.id}`;
+
+  //console.log(bookPage);
+  //console.log(id);
+  //console.log(req.params.id);
+
+  //if the route page id exists then render, else 404
+  if (bookGenre.includes(req.params.id)) {
+    res.render("pages/book-genre-page", {
+      title: title,
+      booklist: booklist,
     });
   } else {
     res.status(404);
