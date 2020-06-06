@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:300&display=swap');
-@import 'reset.css';
-@import 'typography.css';
-@import 'song.css';
-@import 'song-page.css';
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:300&display=swap");
+@import "reset.css";
+@import "typography.css";
+@import "song.css";
+@import "song-page.css";
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap");
 
 body {
   background: #fafafa;
@@ -29,14 +30,20 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: slategray;
 }
 
 .main.four-oh-four .title {
   font-size: 96px;
+  color: blue;
 }
 
+.title {
+  color: blue;
+  font-family: "Cinzel", serif;
+  font-weight: bolder;
+}
 .content {
   display: flex;
   flex-direction: column;
