@@ -79,11 +79,50 @@ app.get("/top50/song/:rank", (req, res) => {
   }
 });
 
+//bookshelf with all the books
 app.get("/books", (req, res) => {
   res.render("./pages/books", {
     title: "25 Books You Probably Read Already",
     books: books,
   });
+});
+
+//view a single book and its info
+app.get("/books/book/:id", (req, res) => {
+  const id = Number(req.params.id);
+  let book = books.find((book) => book.id === id);
+
+  if (book) {
+    res.render("./pages/singleBook", {
+      title: `${book.title}`,
+      book: book,
+    });
+  } else {
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
+});
+
+//view all books by genre
+app.get("/books/:genre", (req, res) => {
+  const genre = req.params.genre;
+  console.log(genre);
+  let genreBooks = books.filter((book) => book.type === genre);
+  console.log(genreBooks);
+
+  if (genreBooks.length >= 1) {
+    res.render("./pages/books", {
+      title: `Book genre: ${genre}`,
+      books: genreBooks,
+    });
+  } else {
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
 });
 
 // handle 404s

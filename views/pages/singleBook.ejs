@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+
+<section class="container" >
+    <div class="single-book-container">
+        <img src="<%- book.imgUrl %>" alt="cover of <%- book.title %>">
+        <h2 class="single-book-title"><%- book.title %></h2>
+        <p class="single-book-author"><%- book.author %></p>
+        <p class="single-book-type"><%- book.type %></p>
+        <p class="single-book-description"><%- book.description %></p>
+    </div>
+
+</section>
+
+
+<%- include('../partials/footer') %>
