@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:300&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
 @import 'reset.css';
 @import 'typography.css';
 @import 'song.css';
 @import 'song-page.css';
-
+@import 'books.css';
+@import 'book.css';
 body {
   background: #fafafa;
   display: flex;

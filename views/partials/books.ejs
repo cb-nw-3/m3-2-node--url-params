@@ -1,0 +1,21 @@
+<ol>
+  <% books.forEach((element, index) => { %>
+  <li class = "line">
+    <span class = "indexWrapper">
+      <div class="index">#<%= index + 1 %></div>
+      <div class="ids">(ID#: <%= element.id %>)</div>
+    </span>
+    <span>
+      <img class = "allBooks" src=<%=element.imgUrl%>>
+    </span>
+    <span class ="dataWrapperBook">
+      <div class = "title"><h2><%= element.title%></h2></div>
+      <div class = "autor"><p>autor: <i><%=element.author%></i></p></div>
+    </span> 
+    <span class = "desc">
+      <div class = "type"><%=element.type%></div>
+      <div class = "textDesc"><%=element.description%></div>
+    </span>
+  </li>
+  <% }); %>
+</ol>

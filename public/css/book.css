@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
-.songWrapper {
+.bookWrapper {
   width: 100vw;
   height: 800px;
   display: flex;
@@ -7,10 +6,10 @@
   justify-content: center;
 }
 
-.songBox {
+.bookBox {
   border: 1px solid #cccccc;
-  height: 500px;
-  width: 450px;
+  height: 700px;
+  width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,31 +18,32 @@
   box-shadow: 0px 0px 17px -1px rgba(107, 103, 107, 1);
 }
 
-.songTitle {
+.bookTitle {
   margin-top: 18px;
   padding-bottom: 18px;
   border-bottom: 1px solid gray;
 }
 
-.songArtist {
+.bookAuthor {
   color: gray;
   margin-top: 12px;
 }
 
-.songStreams {
-  font-size: 12rem;
-  font-family: 'Roboto Slab', serif;
-  color: #cccccc;
+.textDescBook {
+  color: gray;
+  padding: 10px 12px;
+  text-align: justify;
+  font-size: 1rem;
 }
 
-#arrow-left-song {
+#arrow-left-book {
   font-size: 100px;
   margin-right: 12px;
   margin-top: 200px;
   color: gray;
 }
 
-#arrow-right-song {
+#arrow-right-book {
   font-size: 100px;
   margin-left: 12px;
   margin-top: 200px;
