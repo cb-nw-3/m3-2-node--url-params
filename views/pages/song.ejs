@@ -1,10 +1,10 @@
 <%- include ('../partials/header') %>
 
 <div class='main'>
-    <!-- <nav>
-        <a href='previous'>Previous</a>
-        <a href='/question8'>Next</a>
-    </nav> -->
+    <nav>
+        <a href= '<%= `${previous}`%>'>Previous</a>
+        <a href='<%= `${next}`%>'>Next</a>
+    </nav>
     <div class='song-page'>
         <h3 class='title'><%= song.title %></h3>
         <p class='artist'><%= song.artist %></p>

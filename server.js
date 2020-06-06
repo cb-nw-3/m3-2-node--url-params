@@ -60,14 +60,16 @@ app.get("/top50/popular-artist", (req, res) => {
 });
 
 //song
-let songNumber = app.get("/top50/song:rank", (req, res) => {
+app.get("/top50/song/:rank", (req, res) => {
     const rank = req.params.rank - 1;
-    let previous = rank - 1;
-    let next = rank + 1;
+    let previous = rank;
+    let next = rank + 2;
     if (top50[rank]) {
         const title = `Song #${top50[rank].rank}`;
         res.render("pages/song", {
             title,
+            previous,
+            next,
             song: top50[rank],
         });
     } else {
@@ -90,12 +92,19 @@ app.get("/books", (req, res) => {
 });
 
 //books by id
-
 app.get("/book/:id", (req, res) => {
     const id = req.params.id;
-    if (books[id]) {
+    books.forEach((book) => {
+        console.log(book.id);
+        console.log(book.id == id);
+    });
+    // console.log("hello", books);
+    const book = books.find((book) => book.id == id);
+    if (book) {
+        const title = `${book.title}`;
         res.render("pages/book", {
-            book: books[id],
+            title,
+            book: book,
         });
     } else {
         res.status(404);
