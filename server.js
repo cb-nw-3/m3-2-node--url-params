@@ -108,9 +108,8 @@ app.get("/books/book/:id", (req, res) => {
 //view all books by genre
 app.get("/books/:genre", (req, res) => {
   const genre = req.params.genre;
-  console.log(genre);
+
   let genreBooks = books.filter((book) => book.type === genre);
-  console.log(genreBooks);
 
   if (genreBooks.length >= 1) {
     res.render("./pages/books", {
