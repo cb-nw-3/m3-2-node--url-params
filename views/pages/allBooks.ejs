@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/bookStyle.css">
+</head>
+<body>
+<header>
+    <h1><%= title %></h1>
+</header>
+<br>
+<a href="/genre" style="padding-left: 30px; color: grey;"><h2>Search by Genre</h2></a>
+<ul style="margin: 20px;">
+  <% booklist.forEach(book => { %>
+    <li class="books-item">
+      <a href="/books/<%= book.id %>">
+        <img src="<%= book.imgUrl%>"/>
+      </a>
+      <div class="books-content">
+        <h1><%= book.title %> </h1>
+        <h2>by <%= book.author %></h2>
+        <h3><%= book.type %></h3>
+        <p><%= book.description %></p>
+      </div>
+
+    </li>
+  <% }) %>
+</ul>
+
+
+<%- include('../partials/footer') %>2

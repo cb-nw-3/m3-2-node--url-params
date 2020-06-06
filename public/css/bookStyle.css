@@ -1,0 +1,30 @@
+.books-item {
+  display: flex;
+  padding: 25px 40px;
+  border-bottom: 1px solid black;
+  margin: 20px;
+}
+
+.books-item > a {
+  margin-right: 25px;
+}
+
+.home {
+  margin: 0 auto;
+}
+
+.nav {
+  margin: 0 auto;
+}
+
+.nav > a {
+  padding: 20px;
+}
+
+.prev {
+  font-size: 1rem;
+}
+
+.next {
+  font-size: 1rem;
+}
