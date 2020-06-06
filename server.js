@@ -4,6 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 
 const { top50 } = require("./data/top50");
+const { books } = require("./data/books");
 
 const PORT = process.env.PORT || 8000;
 
@@ -76,6 +77,13 @@ app.get("/top50/song/:rank", (req, res) => {
       path: req.originalUrl,
     });
   }
+});
+
+app.get("/books", (req, res) => {
+  res.render("./pages/books", {
+    title: "25 Books You Probably Read Already",
+    books: books,
+  });
 });
 
 // handle 404s

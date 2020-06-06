@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+<section class="bookshelf">
+<% books.forEach(book =>{ %>
+    <%- include('../partials/book', {book:book})%>
+<% }) %>
+</section>
+
+<%- include('../partials/footer') %>
