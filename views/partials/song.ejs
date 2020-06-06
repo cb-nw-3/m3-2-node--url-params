@@ -1,5 +1,17 @@
-<ul class="songList">
-    <% top50.forEach(function(item) { %>
-        <li>#<%- item.rank %> (<%- item.streams %> streams) <%- item.title %> <%- item.artist %> Viewed <%- item.publicationDate %> </li>
-        <% }); %>
-    </ul>
+<% top50.forEach(function(item) { %>
+<div class="songRow">
+    <div class="songItem">
+        <div class="rankStream">
+            <p class="rank">#<%- item.rank %></p>
+            <p class="stream">(<%- item.streams %> streams)</p>
+        </div>
+        <div class="songArtist">
+            <p class="song"><%- item.title %></p>
+            <p class="artist"><%- item.artist %></p>
+        </div>
+        <div class="songDate">
+           <p>Publication Date: <%- item.publicationDate %></p>
+        </div>
+    </div>
+</div>
+<% }); %>
