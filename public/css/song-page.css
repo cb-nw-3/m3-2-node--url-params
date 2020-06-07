@@ -1,0 +1,19 @@
+.mainsongpage {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.eachsongpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /* align-content: center; */
+  height: 400px;
+  width: 400px;
+  box-shadow: 5px 6px 23px 0px blue;
+  border-radius: 15px;
+}
