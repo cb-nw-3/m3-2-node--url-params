@@ -26,7 +26,7 @@ li {
 }
 .songStreams {
   color: #333;
-  font-size: 80%;
+  font-size: 0.8em;
 }
 .songArtist {
   font-style: italic;
@@ -37,4 +37,29 @@ li {
   position: absolute;
   left: 80%;
   margin-top: 100px;
+}
+.songDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 30px;
+  width: 200px;
+  height: 200px;
+}
+.songTitle {
+  font-size: 1.5em;
+}
+.songArtist {
+  font-size: 1em;
+}
+.songStream {
+  font-size: 3em;
+  line-height: 1em;
+  color: rgb(105, 105, 105);
+}
+.songBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
