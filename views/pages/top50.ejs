@@ -2,9 +2,8 @@
 
 <div class='main'>
   <ul>
-    <!-- Render the list on the page (only the rank and title for now).-->
-    <% top50.forEach((item) => { %>
-      <li><%- `Number ${item.rank}. ${item.title}` %></li>
+    <% top50.forEach(item => { %>
+      <%- include( '../partials/song',  {item: item}) %>
     <% }); %>
   </ul>
 </div>
