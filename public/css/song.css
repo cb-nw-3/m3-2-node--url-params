@@ -1,0 +1,65 @@
+li {
+  display: flex;
+}
+.song {
+  border-bottom: black 1px solid;
+  width: 100%;
+  display: flex;
+  padding: 30px 10px;
+  position: relative;
+}
+.songRank {
+  color: black;
+  font-size: 2em;
+}
+.songNumbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 150px;
+}
+.songInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.songStreams {
+  color: #333;
+  font-size: 0.8em;
+}
+.songArtist {
+  font-style: italic;
+  font-size: 1em;
+}
+.songDate {
+  font-size: 80%;
+  position: absolute;
+  left: 80%;
+  margin-top: 100px;
+}
+.songDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 30px;
+  width: 200px;
+  height: 200px;
+}
+.songTitle {
+  font-size: 1.5em;
+}
+.songArtist {
+  font-size: 1em;
+}
+.songStream {
+  font-size: 3em;
+  line-height: 1em;
+  color: rgb(105, 105, 105);
+}
+.songBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
