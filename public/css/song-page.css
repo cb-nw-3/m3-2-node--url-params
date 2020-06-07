@@ -17,14 +17,14 @@
     box-shadow: 0px 0px 20px 15px lightgrey;
 }
 
-h2 {
+.soloSongBox h2 {
     border-bottom: 1px solid lightgrey;
     padding-bottom: 20px;
     width: 80%;
     text-align: center;
 }
 
-h3 {
+.soloSongBox h3 {
     padding-top: 20px;
 }
 

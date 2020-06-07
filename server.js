@@ -88,14 +88,41 @@ app.get('/books', (req, res) => {
 
 // individual book view
 
+// ah hell. this is gonna get complicated to pull the specific book.
+// basically, we need to pull the object values for the key 'id'
+// this should return an array that matches the order of the books
+// we find the indexOf the desired item in the array
+// then we return that number and pull the actual data that we want.
+
+// that was not nearly as complicated as I thought it was going to be.
+// what can that possibly mean.
+
 app.get('/books/id/:bookId', (req, res) => {
-    res.send("all books view");
+
+    // let's assume that there would normally be data validation here.
+
+    let bookId = Number(req.params.bookId);
+
+    let bookIdArr = [];
+
+    books.forEach(book => {
+        bookIdArr.push(book.id);
+    })
+
+    if (books[bookIdArr.indexOf(bookId)] === undefined) {
+        res.render('pages/fourOhFour', {
+            title: 'I got nothing',
+            path: req.originalUrl
+        });
+    } else {
+        res.render("pages/singlebook", { data: books[bookIdArr.indexOf(bookId)] });
+    }
 })
 
 // book type view
 
 app.get('/books/type/:type', (req, res) => {
-    res.send("all books view");
+    res.send("type view");
 })
 
 // handle 404s

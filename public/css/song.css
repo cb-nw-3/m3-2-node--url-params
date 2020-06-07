@@ -15,6 +15,49 @@ li {
     width: 100%;
 }
 
+.itemTitle {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.itemArtist {
+    font-style: italic;
+    margin-right: 0px;
+}
+
+/* Book specific styling */
+
+.bookCover {
+    margin-right: 20px;
+}
+
+.itemSynopsis {
+    display: block;
+    margin-top: 10px;
+}
+
+.songBox a {
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.soloBookContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.soloBookBox {
+    margin: 20px;
+    width: 600px;
+}
+
+/* Song specific styling */
+
 .rankBox {
     margin-right: 20px;
     width: 100px;
@@ -38,17 +81,6 @@ li {
 .itemStreamNums {
     font-size: 12px;
     color: grey;
-}
-
-.itemTitle {
-    display: block;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.itemArtist {
-    font-style: italic;
-    margin-right: 0px;
 }
 
 .itemDate {
