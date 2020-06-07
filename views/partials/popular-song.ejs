@@ -1,0 +1,17 @@
+<% finalList.forEach(function(item) { %>
+    <div class="songRow">
+        <div class="songItem">
+            <div class="rankStream">
+                <p class="rank">#<%- item.rank %></p>
+                <p class="stream">(<%- item.streams %> streams)</p>
+            </div>
+            <div class="songArtist">
+                <p class="song"><%- item.title %></p>
+                <p class="artist"><%- item.artist %></p>
+            </div>
+            <div class="songDate">
+               <p>Publication Date: <%- item.publicationDate %></p>
+            </div>
+        </div>
+    </div>
+    <% }); %>
