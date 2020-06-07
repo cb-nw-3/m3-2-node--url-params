@@ -22,6 +22,42 @@ app.get('/top50', (req, res) => {
     });
 });
 
+app.get('/top50/popular-artist', (req, res) => {
+    const artists = [];
+    const artistCount = {};
+    
+    top50.forEach(item => {
+        if (!artists.includes(item.artist)) {
+            artists.push(item.artist);
+        };
+    });
+
+    artists.forEach(artist => {
+        let count = 0;
+        top50.forEach(item => {
+            if (item.artist === artist) count += 1;
+        });
+        artistCount[artist] = count;
+    });
+
+    const rankedArtists = [];
+
+    Object.values(artistCount).forEach((count, id) => {
+        const artist = Object.keys(artistCount)[id];
+        rankedArtists.push({
+            artist: artist,
+            count: count
+        });
+    });
+
+    const mostPopularArtist = rankedArtists.sort((a, b) => a.count < b.count ? 1 : -1)[0].artist;    
+
+    res.render('pages/popularArtist', {
+        title: 'Most Popular Artist',
+        songs: top50.filter(item => item.artist === mostPopularArtist)
+    });
+});
+
 // handle 404s
 app.get('*', (req, res) => {
     res.status(404);
