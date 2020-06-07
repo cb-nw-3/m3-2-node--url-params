@@ -1,0 +1,21 @@
+<%- include('../partials/header', {title: "A Whole Bunch of Books"}) %>
+
+<div id="typelist">
+
+    <span>Book types: </span>
+
+    <% typelist.forEach(type => { %>
+
+    <a href="type/<%= type %>"><%= type %></a>
+
+    <% }) %>
+
+</div>
+
+<ul>
+
+    <%- include('../partials/book', {data: data}) %>
+
+</ul>
+
+<%- include('../partials/footer'); %>

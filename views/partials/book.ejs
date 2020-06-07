@@ -1,0 +1,21 @@
+<% data.forEach( item => { %>
+
+<li>
+
+    <div class="bookCover">
+        <img src="<%= item.imgUrl %>" alt="Book cover art for <%= item.title %>">
+    </div>
+
+    <div class="rightContainer">
+        <div class="songBox">
+            <span class="itemTitle"><a href="id/<%= item.id %>">&#128279;</a><%= item.title %></span>
+            <span class="itemArtist">by <%= item.author %></span>
+            <span class="itemSynopsis"><%= item.description %></span>
+        </div>
+
+
+    </div>
+
+</li>
+
+<% }) %>

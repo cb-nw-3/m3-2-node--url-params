@@ -1,0 +1,23 @@
+<%- include('../partials/header', {title: data.title}) %>
+
+<div class="soloBookContainer">
+
+    <div class="imgBox">
+        <img src="<%= data.imgUrl %>">
+    </div>
+
+    <div class="soloBookBox">
+        <h2><%= data.title %></h2>
+
+        <div class="bookMetadata">
+
+            <p><%= data.author %> - <%= data.type %></p>
+
+        </div>
+
+        <p id="bookDescription"><%= data.description %></p>
+    </div>
+
+</div>
+
+<%- include('../partials/footer'); %>
