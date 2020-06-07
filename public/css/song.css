@@ -28,6 +28,15 @@ li {
 
 /* Book specific styling */
 
+#typelist {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#typelist a {
+    padding: 10px;
+}
+
 .bookCover {
     margin-right: 20px;
 }
@@ -54,6 +63,15 @@ li {
 .soloBookBox {
     margin: 20px;
     width: 600px;
+}
+
+.soloBookBox h2 {
+    margin-bottom: 5px;
+    border-bottom: 1px lightgrey solid;
+}
+
+.bookMetadata {
+    margin-bottom: 10px;
 }
 
 /* Song specific styling */

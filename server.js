@@ -83,7 +83,16 @@ app.get('/top50/song/:songNum', (req, res) => {
 // all books view
 
 app.get('/books', (req, res) => {
-    res.render('pages/books', { data: books });
+
+    let typeArr = [];
+
+    books.forEach(book => {
+        if (!typeArr.includes(book.type)) {
+            typeArr.push(book.type)
+        }
+    })
+
+    res.render('pages/books', { data: books, typelist: typeArr });
 })
 
 // individual book view
@@ -122,7 +131,16 @@ app.get('/books/id/:bookId', (req, res) => {
 // book type view
 
 app.get('/books/type/:type', (req, res) => {
-    res.send("type view");
+
+    let bookArr = [];
+
+    books.forEach(book => {
+        if (book.type === req.params.type) {
+            bookArr.push(book);
+        }
+    })
+
+    res.render("pages/typelist", { data: bookArr });
 })
 
 // handle 404s
