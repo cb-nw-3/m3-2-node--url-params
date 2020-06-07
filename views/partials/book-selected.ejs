@@ -1,0 +1,24 @@
+<div class="bookRow">
+    <div class="top"></div>
+    <div class="bookItem">
+        <div class="bookDetails">
+            <div class="detail">
+            <p>Title: </p><p><%- bookSelected.title %></p>
+            </div>
+            <div class="detail">
+                <p>Type: </p><p><%- bookSelected.type %></p>
+            </div>
+            <div class="detail">
+                <p>Author:</p><p><%- bookSelected.author %></p>
+            </div>
+            <div class="bookDescription">
+                <p style="margin-right: 10px;">description:</p>
+                <p><%- bookSelected.description %></p>
+            </div>
+        </div>
+        <div class="bookImage">
+          <img src= <%- bookSelected.imgUrl %> alt="">
+        </div>
+    </div>
+    <div class="bottom"></div>
+</div>

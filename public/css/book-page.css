@@ -1,0 +1,32 @@
+.bookRow {
+  display: flex;
+  flex-direction: column;
+}
+.bookItem {
+  display: flex;
+  flex: 1;
+}
+.bookDetails {
+  flex: 1;
+}
+.bookImage {
+  flex: 1;
+}
+.bookDescription {
+  display: flex;
+}
+.top,
+.bottom {
+  flex: 1;
+}
+
+.detail {
+  display: flex;
+  font-size: 25px;
+}
+.detail p:first-of-type {
+  margin-right: 2%;
+}
+.bookDescription {
+  font-size: 20px;
+}
