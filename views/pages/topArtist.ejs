@@ -1,0 +1,10 @@
+
+<%- include( '../partials/header') %>
+<ol>
+    <% theTopArtistSongs.forEach((element) => { %>
+    <li>#<%= element.rank %> (<%= element.streams %> streams) <%= element.title %> <%= element.artist %> <%= element.publicationDate %></li>
+    <% }); %>
+</ol>
+
+
+<%- include( '../partials/footer') %>
