@@ -38,15 +38,20 @@ const q2 = (req, res) => {
 
 const q3 = (req, res) => {
   const songID = req.params.songID;
-  let songSelected = {};
-  top50.forEach(function (song) {
-    if (song.rank == songID) {
-      songSelected = song;
-    }
-  });
-  let title = "Song #" + songID;
-  console.log("songSelected: ", songSelected);
-  res.render("./pages/songPage", { title, songSelected });
+  if (songID < 1 || songID > top50.length) {
+    let title = "I got Nothing";
+    res.render("./pages/fourOhFour", { title, songID });
+  } else {
+    let songSelected = {};
+    top50.forEach(function (song) {
+      if (song.rank == songID) {
+        songSelected = song;
+      }
+    });
+    let title = "Song #" + songID;
+    console.log("songSelected: ", songSelected);
+    res.render("./pages/songPage", { title, songSelected });
+  }
 };
 
 const app = express();

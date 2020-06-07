@@ -60,3 +60,9 @@ header {
   display: flex;
   flex-direction: column;
 }
+.title {
+  margin-bottom: 0;
+}
+.subtitle {
+  font-size: 20px;
+}
