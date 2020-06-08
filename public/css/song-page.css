@@ -1,0 +1,29 @@
+.song-box {
+  text-align: center;
+  width: 480px;
+  height: 460px;
+  box-shadow: 0 0 20px -2px #C0C0C0;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 20px;
+}
+
+.song-title {
+  padding: 10px;
+  border-bottom: solid 1px lightgray;
+}
+
+.song-artist {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.song-streams {
+  font-size: 200px;
+  color: lightgray;
+}

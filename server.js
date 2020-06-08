@@ -58,6 +58,15 @@ app.get('/top50/popular-artist', (req, res) => {
     });
 });
 
+app.get('/top50/song/:rank', (req, res) => {
+    const rank = req.params.rank - 1;
+
+    res.render('pages/songPage', {
+        title: `Song #${top50[rank].rank}`,
+        song: top50[rank]
+    });
+});
+
 // handle 404s
 app.get('*', (req, res) => {
     res.status(404);
