@@ -1,6 +1,5 @@
 .songPageCont {
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	flex-direction: column;
@@ -9,9 +8,10 @@
 
 .backdrop {
 	background-color: ghostwhite;
-	padding: 250px;
+	padding: 175px 250px;
 	border-radius: 25px;
 	box-shadow: 3px 4px 23px 0px #ccc;
+	margin-top: 50px;
 }
 
 .songPageTitle {

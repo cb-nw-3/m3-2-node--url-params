@@ -6,6 +6,8 @@ const morgan = require("morgan");
 
 const { top50 } = require("./data/top50");
 
+const { books } = require("./data/books");
+
 const PORT = process.env.PORT || 8000;
 
 const app = express();
@@ -17,9 +19,30 @@ app.set("view engine", "ejs");
 
 // endpoints here
 
-app.get(`/top50`, (req, res) => {
-	console.log("test");
+app.get(`/books`, (req, res) => {
+	res.render("pages/books", {
+		title: "List of Books",
+		books: books,
+	});
+});
 
+app.get("/books/book/:id", (req, res) => {	
+	const id = req.params.id;
+	if (books[id]) {
+		res.render(`pages/bookPage`, {
+			title: `${books[id].title}`,
+			book: books[id],
+		});
+	} else {
+		res.status(404);
+		res.render("pages/fourOhFour", {
+			title: "I got nothing",
+			path: req.originalUrl,
+		});
+	}
+});
+
+app.get(`/top50`, (req, res) => {
 	res.render("pages/top50", {
 		title: "Top 50 Songs Streamed on Spotify",
 		top50: top50,

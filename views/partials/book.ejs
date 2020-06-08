@@ -1,0 +1,12 @@
+<% books.forEach(book => { %>
+    <li style="list-style-type: decimal;">
+        <!-- <div class="bookCont"> -->
+            <span class="bookTitle"> <%= book.title %> </span>
+            <span class="bookAuthor">written by: <%= book.author %> </span>
+            <span class="bookId">   (ID: <%= book.id %>)</span>
+            <!-- <div class="bookDescription"> <%= book.description %> </div> -->
+            <!-- <div class="bookType"> <%= book.type %> </div> -->
+            <!-- <div class="bookImg"> <img src="<%= book.imgUrl %>"></div> -->
+        <!-- </div> -->
+    </li>
+<% }) %>
