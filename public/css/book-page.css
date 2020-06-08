@@ -1,0 +1,19 @@
+.single-book-container {
+  display: flex;
+  flex: 0 auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 80vh;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 2px;
+  padding: 10px 20px;
+}
+.single-book-title {
+  margin-bottom: 20px;
+}
+
+.single-book-description {
+  margin: 20px;
+}

@@ -1,0 +1,24 @@
+<div class="nav-bar">
+
+  <% if (song.rank >= 2){ %>
+
+<button
+    class="nav-button"
+    onclick="location.href='http://localhost:8000/top50/song/<%-(song.rank)-1%>'";
+  >
+    Previous Song
+  </button>
+
+
+ <% } %>
+
+<% if (song.rank <= 49) {%>
+  <button
+    class="nav-button"
+    onclick="location.href='http://localhost:8000/top50/song/<%-(song.rank)+1%>'";
+  >
+    Next Song
+  </button>
+
+  <%} %>
+</div>

@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+<ol>
+<% topArtistSongs.forEach(song =>{ %>
+    <%- include('../partials/song', {song:song})%>
+<% }) %>
+</ol>
+
+<%- include('../partials/footer') %>
