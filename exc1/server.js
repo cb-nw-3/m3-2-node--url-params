@@ -1,5 +1,5 @@
 'use strict';
-
+const path = require("path");
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -10,10 +10,13 @@ const PORT = process.env.PORT || 8000;
 
 const app = express();
 
-app.use(morgan('dev'));
-app.use(express.static('public'));
-app.use(express.urlencoded({extended: false}));
-app.set('view engine', 'ejs');
+app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "./public")));
+//above __dirname indicates to follow directory by name wherever it is
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.set("views", path.join(__dirname, "./views"));
+app.set("view engine", "ejs");
 
 // endpoints here
 app.get('/top50', (req, res) => {
