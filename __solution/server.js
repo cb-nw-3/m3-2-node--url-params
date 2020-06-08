@@ -1,5 +1,5 @@
 "use strict";
-
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
@@ -15,6 +15,7 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "./views"));
 
 // endpoints
 //- Pass  values to the partials via the render method.
