@@ -1,0 +1,38 @@
+.container22 {
+  border-radius: 20px;
+  box-shadow: 1px 1px lightgrey;
+  margin: 40px 20vw;
+  /* border: dotted red; */
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+.song22 {
+  font-size: 40px;
+  padding-top: 20vh;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  border-bottom: solid grey 1px;
+  text-align: center;
+  flex: 0.5;
+  min-height: 5px;
+  /* border: solid red; */
+}
+
+.artist22 {
+  /* border: dotted blue; */
+  text-align: center;
+  padding-top: 5vh;
+  flex: 1;
+  font-size: 25px;
+  bottom: 25px;
+}
+
+.view22 {
+  /* border: solid gold; */
+  font-size: 10rem;
+  text-align: center;
+  flex: 2;
+  padding-bottom: 40px;
+  color: lightgrey;
+}

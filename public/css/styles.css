@@ -57,6 +57,10 @@ header {
   padding: 12px 14px;
 }
 
+.book-ctn {
+  margin-left: 20px;
+}
+
 @media screen and (min-width: 900px) {
   .content {
     flex-direction: row;

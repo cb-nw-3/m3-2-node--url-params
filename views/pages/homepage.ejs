@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title> 
+    <!-- the key in this example is "title" that we are refering-->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<header>
+    <h1><%= title %></h1>
+</header>
+
+<body>
+    <h1>Homepage</h1>
+        <div>Type</div>
+        <ul>
+            <li> 
+                <a href="fiction">
+                    Fiction
+                </a>
+            </li>
+            <li> 
+                <a href="nonfiction">
+                    Non-fiction
+                </a>
+            </li>
+            <li> 
+                <a href="drama">
+                    Drama
+                </a>
+            </li>
+            <li> 
+                <a href="graphicnovel">
+                    Graphic-Novel
+                </a>
+            </li>
+    </ul>
+    <ul>
+        <div>Booklist</div>
+            <% books.map((object, index) => { %>
+                <li> 
+                    <a href="<%= object.id%>">
+                        <div class = "rank"> 
+                                <%="#"+ object.id +"/"+ object.title +"/"+ object.author%>
+                        </div>
+                    </a>
+                </li>
+                <% }); %>
+    </ul>
+  </body>
