@@ -1,0 +1,8 @@
+<%- include( '../partials/header') %>
+<ol>
+    <% allTheBooks.forEach((element, id) => { %>
+    <li>Number <%= id +1 %>. <%= element.title %></li>
+    <% }); %>
+</ol>
+
+<%- include( '../partials/footer') %>

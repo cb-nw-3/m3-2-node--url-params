@@ -5,6 +5,8 @@
 ## EJS
 
 - What's the difference between these two?
+  the one with "-" only shows value as HTML
+  the one with "=" shows everything
 
 ```js
 <%- myVar %>
@@ -16,12 +18,14 @@ _...Why do we have two options?_
 ---
 
 What is this for?
+avoid writing the same code. fetch EJS in a other field and drop it in the spot.
 
 ```js
 <%- include('<PATH_TO_EJS_FILE', {}) %>
 ```
 
 _...What makes this so powerful?_
+react is very big in this idea
 
 ---
 
