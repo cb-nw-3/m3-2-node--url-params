@@ -67,6 +67,48 @@ app.get("/top50/popular-artist", (req, res) => {
   });
 });
 
+// Exercises-2 /books
+
+const { books } = require("./data/books");
+app.get("/books", (req, res) => {
+  //req=request, res=response
+  res.render("pages/books", {
+    title: "All books",
+    allTheBooks: books,
+  });
+});
+
+app.get("/books/:booksId", (req, res) => {
+  const theBook = books[req.params.booksId - 100 - 1];
+  if (req.params.booksId >= 101 || req.params.booksId <= 125) {
+    res.render("pages/book", {
+      title: "Book info" + req.params.booksId,
+      ejsTheBook: theBook,
+    });
+  } else {
+    res.status(404);
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
+});
+
+app.get("/books/types/:bookType", (req, res) => {
+  const desiredType = req.params.bookType;
+  let theBooksOfTheDesiredType = [];
+  books.forEach((element) => {
+    if (element.type == desiredType) {
+      theBooksOfTheDesiredType.push(element);
+    }
+  });
+
+  res.render("pages/bookTypes", {
+    title: "The book types",
+    allTheBooksOfDesiredType: theBooksOfTheDesiredType,
+  });
+});
+
 // handle 404s
 app.get("*", (req, res) => {
   res.status(404);

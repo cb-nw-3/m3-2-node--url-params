@@ -1,0 +1,7 @@
+<ol>
+    <% allTheBooksOfDesiredType.forEach((element, id) => { %>
+    <li>Type <%= element.Type %> -- Author <%= element.author %> --- <img src="<%= element.imgUrl %>" alt=""></li>
+    <% }); %>
+</ol>
+
+<%- include( '../partials/footer') %>
