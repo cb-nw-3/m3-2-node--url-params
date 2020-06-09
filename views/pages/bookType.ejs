@@ -1,0 +1,13 @@
+<%- include( '../partials/bookHeader') %>
+
+<% book.forEach(book => { %>
+    <ol>
+        <li style="list-style-type: none;">
+            <div><%= book.title %></div>
+            <div><%= book.author %></div>
+            <div><%= book.imgUrl %></div>
+        </li>
+    </ol>
+<% }) %>
+
+<%- include( '../partials/footer') %>

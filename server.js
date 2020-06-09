@@ -26,12 +26,35 @@ app.get(`/books`, (req, res) => {
 	});
 });
 
-app.get("/books/book/:id", (req, res) => {	
+app.get("/books/book/:id", (req, res) => {
 	const id = req.params.id;
-	if (books[id]) {
+	const book = books.find((elem) => {
+		if (elem.id === Number(id)) return true;
+	});
+	if (book) {
 		res.render(`pages/bookPage`, {
-			title: `${books[id].title}`,
-			book: books[id],
+			title: `${book.title}`,
+			book: book, // Outputting 404
+		});
+	} else {
+		res.status(404);
+		res.render("pages/fourOhFour", {
+			title: "I got nothing",
+			path: req.originalUrl,
+		});
+	}
+});
+
+app.get("/books/booktype/:type", (req, res) => {
+	const type = req.params.type;
+	const book = books.filter((elem) => {
+		if (elem.type === type) return true;
+	});
+	console.log(book);
+	if (book) {
+		res.render(`pages/bookType`, {
+			title: `${book.type}`,
+			book: book, 
 		});
 	} else {
 		res.status(404);

@@ -46,3 +46,58 @@ li {
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
+
+.bookPageCont {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+
+.bookBackdrop {
+	text-align: center;
+	padding: 75px 250px;
+	border-radius: 25px;
+	box-shadow: 3px 4px 23px 0px #ccc;
+	margin-top: 50px;
+	margin-left: 250px;
+	margin-right: 250px;
+}
+
+.bookPageTop {
+
+}
+
+.bookPageTitle {
+	text-align: center;
+	font-size: 25px;
+	text-decoration: underline;
+
+}
+
+.bookPageAuthor {
+	font-size: 22px;
+	font-style: italic;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.bookPageDesc {
+	margin: 15px;
+	border: 1px wheat solid;
+	padding: 15px;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.bookPageImg {
+	text-align: center;
+	padding-top: 15px;
+}
+
+.bookBorder {
+	border-radius: 15px;
+	box-shadow: 3px 4px 23px 0px #ccc;
+
+}

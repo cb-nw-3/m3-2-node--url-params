@@ -1,13 +1,14 @@
-<%- include( '../partials/header') %>
+<%- include( '../partials/bookHeader') %>
 
-    <div class="songPageCont">
-        <div class="backdrop">
-            <div class="songPageTop">
-                <div class="songPageTitle"><%= book.title %></div>
-                <div class="songPageArtist"><%= book.artist %></div>
+    <div class="bookPageCont">
+        <div class="bookBackdrop">
+            <div class="bookPageTop">
+                <div class="bookPageTitle"><%= book.title %></div>
+                <div class="bookPageAuthor"><%= book.author %></div>
             </div>
-            <div class="songPageStreams"><%= book.description %></div>
-        </div>
+            <div class="bookPageDesc"><%= book.description %></div>
+        <div class="bookPageImg"><img class="bookBorder" src="<%= book.imgUrl %>"/></div>
+        </div>    
     </div>
 
 <%- include( '../partials/footer') %>
