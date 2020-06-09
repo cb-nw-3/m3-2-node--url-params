@@ -27,7 +27,7 @@ app.get("/books", (req, res) => {
 });
 
 app.get("/books/:id", (req, res) => {
-  console.log(req.params);
+  console.log("id", req.params);
   const isTheBookFromParams = (book) => book.id === +req.params.id;
   const book = books.find(isTheBookFromParams);
   if (book) {
@@ -44,14 +44,14 @@ app.get("/books/:id", (req, res) => {
   }
 });
 
-app.get("/books/:type", (req, res) => {
-  console.log(req.params);
+app.get("/booksbytype/:type", (req, res) => {
+  console.log("type", req.params);
   const isTheBookFromParams = (book) => book.type === req.params.type;
-  const book = books.find(isTheBookFromParams);
+  const book = books.filter(isTheBookFromParams);
   if (book) {
     res.render("pages/book_type", {
       title: "Book by Type",
-      book: book,
+      books: book,
     });
   } else {
     res.status(404);
