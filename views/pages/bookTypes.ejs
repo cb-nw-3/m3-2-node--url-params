@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+<div class = 'topBar'>
+    <div class = 'topBarTitle'>BookWorm</div>
+</div>
+<h1><%= type %></h1>
+<div class = 'main'>
+    <% books.forEach((book) => { %>
+        <div class='book'>
+            <div class ='cover'>
+                <a href ='/books/<%= book.id %>'>
+                    <img src = '<%= book.imgUrl %>'/>
+                </a>
+            </div>
+            <div class = 'info'>
+                <p class = 'title'><%= book.title %></p>
+                <p class = 'author'><%= book.author %></p>
+            </div>
+        </div>
+    <% }) %>
+</div>

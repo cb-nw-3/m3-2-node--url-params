@@ -1,0 +1,53 @@
+header{
+    display:none
+}
+
+body{
+    background-color:#7DCFB6;
+    margin:0;
+    padding:0;
+}
+.topBar{
+    display:flex;
+    justify-content: space-between;
+    width: 15px;
+    background-color: #ECE4B7;
+    height:30px;
+    width: 100%;
+    max-width: 100%;
+    position:sticky;
+}
+
+.topBarTitle{
+    font-size:1.5rem;
+    font-weight: bold;
+}
+
+.main{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    margin:30px auto;
+}
+
+.book{
+    margin:10px;
+}
+.cover > a > img{
+    width:100px;
+    height:150px;
+}
+.book{
+    display:flex;
+}
+
+.info{
+    margin-left:5px;
+}
+
+.info > .title {
+    font-weight:bold;
+}
+
+.info > .author{
+    font-style: italic;
+}

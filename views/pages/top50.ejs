@@ -1,0 +1,7 @@
+<%- include('../partials/header') %>
+<ul class='list'>
+    <% top50.forEach((item) => { %>
+        <%- include('../partials/song', {item: item}) %>
+    <% }) %>
+</ul>
+<%- include('../partials/footer') %>
