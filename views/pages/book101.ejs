@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <title><%= title%></title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1><%= title%></h1>
+  </header>
+  <div class= " book-ctn">
+    <img src='<%= books[0].imgUrl %>' alt='<%= books[0].title %>' style='height:100px;' />
+    <div>
+      <%=  books[0].title%>
+    </div>
+    <div>
+      <%= "By; " + books[0].author%>
+    </div>
+    <div>
+      <%= "Type; " +books[0].type%>
+    </div>
+    <div>
+      <%= "Description: " + books[0].description%>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+<!-- <% top50.map((object, index) => { %> -->
+    <!-- <li><%="Number "+ object.rank +". "+ object.title %></li> -->
+    <!-- <% }); %> -->
+<!-- Solution to exercice 1-2 -->
+
+
+<div >
+    <% top50.map((object, index) => { %>
+        <li class="container"> 
+            <div class = "rank"> 
+                <span class="ranking">
+                    <%="#"+ object.rank %>
+                </span>
+                <span class="stream">
+                    <%=" (" + object.streams + "streams) " %>
+                </span>
+            </div>
+            <div class = "title">
+                <span class = "song">
+                    <%=  object.title %>
+                </span>
+                <span class = "title">
+                    <%= " by " + object.artist %>
+                </span>
+            </div>
+            <div class = "date">
+                <span >
+                    <%=  "  Date of publication: " + object.publicationDate%>
+                </span>
+            </div>
+        </li>
+        <hr>
+        <% }); %>
+</div>

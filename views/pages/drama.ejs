@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title> 
+    <!-- the key in this example is "title" that we are refering-->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<header>
+    <h1><%= title %></h1>
+</header>
+
+<ol>
+    <div >
+        <% typeDrama.map((object, index) => { %>
+            <li class="container"> 
+                <div > 
+                    <img src='<%= object.imgUrl %>' alt='<%= object.title %>' style='height:100px;' />
+                    <div class="ranking">
+                        <%= object.title %> 
+                    </div>
+                    <div>
+                        <%="by: " + object.author%>
+                    </div>
+                </div>
+            </li>
+            <hr>
+            <% }); %>
+    </div>
+</ol> 

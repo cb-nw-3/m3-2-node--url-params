@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  margin: 30px 0px 30px 0px;
+}
+
+.rank {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.stream {
+  text-align: center;
+}
+
+.ranking {
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  flex: 9;
+}
+
+.date {
+  flex: 1;
+}
