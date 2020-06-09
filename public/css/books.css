@@ -101,3 +101,15 @@ li {
 	box-shadow: 3px 4px 23px 0px #ccc;
 
 }
+
+.bookTypeImg {
+	margin-top: 15px;
+	width: 125px;
+	height: 175px;
+	
+}
+
+.imgCenterCont {
+	display: block;
+	text-align: center;
+}

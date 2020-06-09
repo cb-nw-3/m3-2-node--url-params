@@ -34,7 +34,7 @@ app.get("/books/book/:id", (req, res) => {
 	if (book) {
 		res.render(`pages/bookPage`, {
 			title: `${book.title}`,
-			book: book, // Outputting 404
+			book: book,
 		});
 	} else {
 		res.status(404);
@@ -53,8 +53,8 @@ app.get("/books/booktype/:type", (req, res) => {
 	console.log(book);
 	if (book) {
 		res.render(`pages/bookType`, {
-			title: `${book.type}`,
-			book: book, 
+			title: `List of Books`,
+			book: book,
 		});
 	} else {
 		res.status(404);
