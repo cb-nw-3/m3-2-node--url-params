@@ -1,0 +1,20 @@
+.song {
+  font-family: "Cinzel", serif;
+  font-size: 30px;
+  color: black;
+  font-weight: normal;
+}
+
+.songnumber {
+  font-family: "Cinzel", serif;
+  font-size: 30px;
+  color: blue;
+  font-weight: bold;
+}
+
+.title {
+  font-family: "Cinzel", serif;
+  font-size: 30px;
+  color: blue;
+  font-weight: bolder;
+}
