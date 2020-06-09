@@ -1,0 +1,8 @@
+<%- include("../partials/header.ejs") %>
+<ol class="top50-list">
+  <% top50.forEach((item)=>{ %>
+  <li>Number <%= item.rank%>. <%=item.title%></li>
+
+  <% }) %>
+</ol>
+<%- include("../partials/footer.ejs")%>
