@@ -5,6 +5,7 @@ const express = require('express');
 const morgan = require('morgan');
 
 const { top50 } = require('./data/top50');
+const { books } = require('./data/books');
 
 const PORT = process.env.PORT || 8000;
 
@@ -76,6 +77,38 @@ app.get('/top50/song/:rank', (req, res) => {
         });
     };
 });
+
+app.get('/books', (req, res) => {
+    res.render('pages/books', {
+        title: 'View all books', books: books
+    });
+});
+
+app.get('/books/book/:id', (req, res) => {
+    const id = req.params.id;
+    
+    if (id < 101 || id > 125) {
+        res.status(404);
+        res.render('pages/fourOhFour', {
+            title: 'I got nothing',
+            path: req.originalUrl
+        });
+    } else {
+        let book = books.find(book => {
+            return book.id === Number(id);
+        });
+        res.render('pages/bookPage', {
+            title: 'Book Page',
+            bookTitle: book.title,
+            bookAuthor: `Author: ${book.author}`,
+            bookType: book.type,
+            bookId: book.id,
+            bookImage: book.imgUrl      
+        });
+    };
+});
+
+// TODO: Implement filter base on book type
 
 // handle 404s
 app.get('*', (req, res) => {
