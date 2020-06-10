@@ -1,2 +1,6 @@
-<%- include("../partials/header.ejs") %> <%- include("../partials/song.ejs") %>
+<%- include("../partials/header.ejs") %>
+<ol>
+  <% top50.forEach((item)=>{ %> <%-
+  include("../partials/song.ejs",{item:item})%> <% }) %>
+</ol>
 <%- include("../partials/footer.ejs")%>
