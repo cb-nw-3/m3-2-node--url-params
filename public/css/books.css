@@ -1,0 +1,109 @@
+body {
+	background: linear-gradient(to right, #16222a, #3a6073);
+	color: mintcream;
+}
+
+/* .bookCont { */
+	/* padding-top: 15px; */
+/* } */
+
+.bookTitle {
+	font-size: 20px;
+	padding-top: 5px;
+	font-weight: 900;
+}
+
+.bookAuthor {
+	font-size: 20px;
+	padding-top: 5px;
+}
+
+.bookType {
+	text-transform: uppercase;
+	padding-top: 5px;
+	padding-left: 15px;
+}
+
+.bookDescription {
+	font-style: italic;
+	padding-top: 5px;
+	padding-left: 15px;
+}
+
+.bookImg {
+	padding-bottom: 25px;
+	padding-top: 5px;
+}
+
+.bookId {
+	font-style: italic;
+}
+
+li {
+	border-bottom: 1px solid mintcream;
+	margin-left: 15px;
+	margin-right: 25px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.bookPageCont {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+
+.bookBackdrop {
+	text-align: center;
+	padding: 75px 250px;
+	border-radius: 25px;
+	box-shadow: 3px 4px 23px 0px #ccc;
+	margin: 50px 250px;
+}
+
+.bookPageTitle {
+	text-align: center;
+	font-size: 25px;
+	text-decoration: underline;
+
+}
+
+.bookPageAuthor {
+	font-size: 22px;
+	font-style: italic;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.bookPageDesc {
+	margin: 15px;
+	border: 1px wheat solid;
+	padding: 15px;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.bookPageImg {
+	text-align: center;
+	padding-top: 15px;
+}
+
+.bookBorder {
+	border-radius: 15px;
+	box-shadow: 3px 4px 23px 0px #ccc;
+
+}
+
+.bookTypeImg {
+	margin-top: 15px;
+	width: 125px;
+	height: 175px;
+	
+}
+
+.imgCenterCont {
+	display: block;
+	text-align: center;
+}

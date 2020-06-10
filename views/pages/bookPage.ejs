@@ -1,0 +1,16 @@
+<%- include( '../partials/bookHeader') %>
+
+    <div class="bookPageCont">
+        <div class="bookBackdrop">
+            <div class="bookPageTop">
+                <div class="bookPageTitle"><%= book.title %></div>
+                <div class="bookPageAuthor"><%= book.author %></div>
+            </div>
+            <div class="bookPageDesc"><%= book.description %></div>
+        <div class="bookPageImg">
+            <img class="bookBorder" src="<%= book.imgUrl %>"/>
+        </div>
+        </div>    
+    </div>
+
+<%- include( '../partials/footer') %>
