@@ -1,0 +1,8 @@
+<ol class="top50-list">
+  <% top50.forEach((item)=>{ %>
+  <li>
+    #<%= item.rank%> (<%= item.streams %> streams)<%=item.title%> featuring
+    <%=item.artist%> <%= item.publicationDate %>
+  </li>
+  <% }) %>
+</ol>
