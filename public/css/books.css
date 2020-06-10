@@ -59,13 +59,7 @@ li {
 	padding: 75px 250px;
 	border-radius: 25px;
 	box-shadow: 3px 4px 23px 0px #ccc;
-	margin-top: 50px;
-	margin-left: 250px;
-	margin-right: 250px;
-}
-
-.bookPageTop {
-
+	margin: 50px 250px;
 }
 
 .bookPageTitle {
