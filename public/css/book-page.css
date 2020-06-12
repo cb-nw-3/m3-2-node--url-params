@@ -1,0 +1,54 @@
+.bookPage {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  margin: 25px;
+  border-bottom: 1px solid black;
+}
+
+li {
+  list-style: none;
+}
+
+.bookPageLeftSide {
+  width: 15%;
+  padding: 20px;
+}
+
+.bookPageRightSide {
+  width: 85%;
+  padding: 5px;
+}
+
+.bookId {
+  font-size: 20px;
+  font-style: bold;
+}
+
+.bookType {
+  font-size: 12px;
+}
+
+.bookImg {
+  text-align: left;
+}
+
+.bookAuthor {
+  font-size: 25px;
+  font-style: italic;
+  text-align: left;
+}
+
+.bookTitle {
+  font-size: 20px;
+  font-style: italic;
+  text-align: left;
+  text-transform: lowercase;
+}
+
+.bookDescription {
+  font-size: 12px;
+  font-style: italic;
+  text-align: left;
+  text-transform: lowercase;
+}
