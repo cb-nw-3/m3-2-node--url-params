@@ -108,7 +108,20 @@ app.get('/books/book/:id', (req, res) => {
     };
 });
 
-// TODO: Implement filter base on book type
+// Implement filter by book type
+app.get('/books/type/:type', (req, res) =>{
+    const type = req.params.type
+
+    let bookType = books.filter((book) =>{
+        if (book.type === type){
+            return book
+        };
+    });
+    // TODO: Implement 404 redirect for wrong param added
+    res.render('pages/books', {
+        title: `View books by type: ${type}`, books: bookType
+    });
+});
 
 // handle 404s
 app.get('*', (req, res) => {
