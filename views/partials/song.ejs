@@ -1,0 +1,17 @@
+<% top50.forEach(song => { %>
+
+<li>
+  <div class="songPage">
+    <div class="songPageLeftSide">
+      <p class="songRank">#<%= song.rank %></p>
+      <p class="songStreams">(<%= song.streams %> streams)</p>
+    </div>
+    <div class="songPageRightSide">
+      <p class="songTitle"><%= song.title %></p>
+      <p class="songArtist">by <%= song.artist %></p>
+      <p class="songPublication">Publicated on: <%= song.publicationDate %></p>
+    </div>
+  </div>
+</li>
+
+<% }); %>
