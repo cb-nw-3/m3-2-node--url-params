@@ -95,6 +95,25 @@ app.get("/books", (req, res) => {
   });
 });
 
+// Reach a page for each book
+app.get("/books/:id", (req, res) => {
+  let id = req.params.id;
+
+  const book = books.find((item) => id === item.id);
+  if (book) {
+    res.render("pages/book-page", {
+      title: book.title,
+      item: book,
+    });
+  } else {
+    res.status(404);
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
+});
+
 // handle 404s
 app.get("*", (req, res) => {
   res.status(404);

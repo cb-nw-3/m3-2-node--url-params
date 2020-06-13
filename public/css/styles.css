@@ -4,6 +4,7 @@
 @import "song.css";
 @import "song-page.css";
 @import "book.css";
+@import "book-page.css";
 
 body {
   background: #fafafa;

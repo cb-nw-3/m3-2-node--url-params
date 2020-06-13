@@ -6,33 +6,48 @@
   align-items: center;
 }
 
-.song-box {
+.book-page-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   box-shadow: 0px 0px 5px 1px lightgray;
   width: 60%;
   height: 80%;
 }
 
-.song-title {
+.content-box {
+  flex-direction: column;
+  width: 50%;
+}
+
+.image-box {
+  padding-left: 15px;
+}
+
+.item-box {
+  padding-left: 15px;
+  flex-direction: row;
+  width: 100%;
+}
+
+.book-title {
   font-size: 2rem;
-  border-bottom: 1px solid lightgrey;
   padding: 20px;
 }
 
-.song-artist {
+.author-box {
   margin-top: 15px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: grey;
+  padding-left: 20px;
 }
 
-.song-page-streams {
+.description-box {
   display: flex;
-  height: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 15rem;
-  color: lightgrey;
+  font-size: 20px;
+  color: grey;
 }
