@@ -1,0 +1,6 @@
+<%-include("../partials/header.ejs")%>
+<ol>
+  <% books.forEach((book)=>{ %> <%-
+  include("../partials/books.ejs",{book:book})%> <% }) %>
+</ol>
+<%-include("../partials/footer.ejs")%>

@@ -1,0 +1,15 @@
+<li class="row">
+  <div class="rank-box">
+    <span class="rank">#<%= (book.id)-100%></span>
+    <span class="type"><%= book.type %></span>
+  </div>
+  <div class="cover-image">
+    <img src="<%=book.imgUrl %> " />
+  </div>
+  <div class="book-box">
+    <span class="book"> <%=book.title%></span>
+    <span class="author">by <%=book.author%></span>
+  </div>
+
+  <div class="description-box"><%= book.description %></div>
+</li>

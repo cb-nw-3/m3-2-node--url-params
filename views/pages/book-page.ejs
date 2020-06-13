@@ -1,0 +1,15 @@
+<%- include("../partials/header.ejs"), {title:title} %>
+
+<div class="container">
+  <div class="book-page-box">
+    <div class="content-box">
+      <div class="image-box"><img src="<%=item.imgUrl%>" /></div>
+      <div class="item-box">
+        <h2 class="book-title"><%= item.title %></h2>
+        <div class="author-box"><%= item.author %></div>
+      </div>
+    </div>
+    <div class="description-box"><%= item.description %></div>
+  </div>
+</div>
+<%-include("../partials/footer.ejs")%>
