@@ -70,10 +70,18 @@ app.get("/top50/popular-artist", (req, res) => {
 // Reach a page for each song
 app.get("/top50/song/:rank", (req, res) => {
   let rank = req.params.rank;
-  res.render("pages/song-page", {
-    title: "Song #" + rank,
-    item: top50[rank],
-  });
+  if (top50[rank]) {
+    res.render("pages/song-page", {
+      title: "Song #" + rank,
+      item: top50[rank],
+    });
+  } else {
+    res.status(404);
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
 });
 
 // handle 404s
