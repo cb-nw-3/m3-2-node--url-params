@@ -1,0 +1,10 @@
+<%- include("../partials/header.ejs"), {title:title} %>
+
+<div class="container">
+  <div class="song-box">
+    <h2><%= item.title %></h1>
+    <div class="song-artist"><%= item.artist %></div>
+    <div class="streams"><%= item.streams %></div>
+  </div>
+</div>
+<%-include("../partials/footer.ejs")%>

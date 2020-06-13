@@ -15,6 +15,8 @@ app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 
 // endpoints here
+
+// Reach the Top 50 page
 app.get("/top50", (req, res) => {
   res.render("pages/top50", {
     title: "Top 50 Songs Streamed on Spotify",
@@ -22,6 +24,7 @@ app.get("/top50", (req, res) => {
   });
 });
 
+// Reach the Popular Artist page
 app.get("/top50/popular-artist", (req, res) => {
   let allArtistsObj = {};
 
@@ -61,6 +64,15 @@ app.get("/top50/popular-artist", (req, res) => {
         return song;
       }
     }),
+  });
+});
+
+// Reach a page for each song
+app.get("/top50/song/:rank", (req, res) => {
+  let rank = req.params.rank;
+  res.render("pages/song-page", {
+    title: "Song #" + rank,
+    item: top50[rank],
   });
 });
 
