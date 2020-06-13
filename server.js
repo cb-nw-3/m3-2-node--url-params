@@ -3,6 +3,7 @@
 const morgan = require("morgan");
 
 const { top50 } = require("./data/top50");
+const { books } = require("./data/books");
 
 const PORT = process.env.PORT || 8000;
 
@@ -16,6 +17,7 @@ app.set("view engine", "ejs");
 
 // endpoints here
 
+// -------------------------SONGS-------------------------------------
 // Reach the Top 50 page
 app.get("/top50", (req, res) => {
   res.render("pages/top50", {
@@ -82,6 +84,15 @@ app.get("/top50/song/:rank", (req, res) => {
       path: req.originalUrl,
     });
   }
+});
+
+//-------------------------------BOOKS--------------------------------
+// Reach the Books page
+app.get("/books", (req, res) => {
+  res.render("pages/top25books", {
+    title: "Top 25 Books on Barnes & Noble",
+    books: books,
+  });
 });
 
 // handle 404s
