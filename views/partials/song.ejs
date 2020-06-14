@@ -1,0 +1,5 @@
+<ol>
+    <% top50.forEach(song => { %>
+        <li> <%- `#${song.rank} (${song.streams} streams) ${song.title} by ${song.artist} - ${song.publicationDate}` %> </li>
+    <% }); %>
+</ol>
