@@ -1,0 +1,29 @@
+.song {
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.rank-streams {
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.rank{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.streams{
+    font-weight: bold;
+    color: darkgray;
+}
+
+.name {
+    flex-grow: 3;
+}
+
+.date {
+    flex-grow: 2;
+}
