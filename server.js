@@ -16,7 +16,15 @@ app.set('view engine', 'ejs');
 
 // endpoints here
 app.get('/top50', (req, res) => {
-    res.render('pages/top50.ejs' , {title : 'Top 50 Songs Streamed on Spotify', top50: top50});
+    res.render('pages/top50.ejs' , {title: 'Top 50 Songs Streamed on Spotify', top50: top50});
+})
+
+app.get('/song/:rank', (req, res) => {
+    const rank = req.params.rank;
+    res.render('pages/song-page.ejs', {
+        title: `Song #${top50[rank - 1].rank}`,
+        song: top50[rank - 1]
+    });
 })
 
 // handle 404s
