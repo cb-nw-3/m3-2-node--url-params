@@ -21,10 +21,17 @@ app.get('/top50', (req, res) => {
 
 app.get('/song/:rank', (req, res) => {
     const rank = req.params.rank;
-    res.render('pages/song-page.ejs', {
+    if (rank < 1 || rank > 50){ 
+        res.render('pages/fourOhFour', {
+            title: 'I got nothing',
+            path: req.originalUrl
+        });
+    } else {
+        res.render('pages/song-page.ejs', {
         title: `Song #${top50[rank - 1].rank}`,
         song: top50[rank - 1]
     });
+    }
 })
 
 // handle 404s
