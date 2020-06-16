@@ -1,0 +1,18 @@
+.basic-info {
+    border: 1px solid black;
+    width: 800px;
+    height:600px;
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.basic-info img {
+    margin: 50px;
+    height: 500px;
+}
+
+.book-description {
+    margin: 50px;
+    font-size: 20px;
+}
