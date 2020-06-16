@@ -1,0 +1,9 @@
+.booklist {
+    display:flex;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.thumbnail {
+    height:80px;
+}

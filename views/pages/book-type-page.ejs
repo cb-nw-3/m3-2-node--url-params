@@ -1,0 +1,10 @@
+<%- include('../partials/header.ejs', {}) %>
+<ol class='booklist'>    
+    <% books.forEach(book => { %>
+            <li>  
+                <a href=<%-`http://localhost:8000/books/${book.id}`%>><img class="thumbnail" src="<%- book.imgUrl %>" alt="book cover"></a>
+                <%- ` ${book.title} by ${book.author} (${book.id})`  %>
+            </li>
+    <% }); %>
+</ol>
+<%- include('../partials/footer.ejs', {}) %>

@@ -3,6 +3,8 @@
 @import 'typography.css';
 @import 'song.css';
 @import 'song-page.css';
+@import 'book-page.css';
+@import 'books.css';
 
 body {
   background: #fafafa;
