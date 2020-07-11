@@ -1,0 +1,25 @@
+<%- include( '../partials/header', { title: title }) %>
+
+<div class='main'>
+    <div class="book-page-details">
+        <div class="book-cover">
+            <img class="" src='<%= bookImage %>' alt='<%= bookAuthor %>'/>
+        </div>
+        <div class="book-data">
+            <p class="book-page-type"><%= bookType %></p>
+            <h2 class="book-page-title">
+                <%= bookTitle %>
+            </h2>
+            <p class="book-page-author">
+                <%= bookAuthor %>
+            </p>
+            <p>
+                <%= bookId %>
+            </p>
+        </div>
+    </div> 
+</div>
+
+
+
+<%- include( '../partials/footer') %>

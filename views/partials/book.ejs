@@ -1,0 +1,11 @@
+<li class='book-row'>
+    <div>
+        <img class="book-image" src='<%= book.imgUrl %>' alt='<%= book.author %>'/>
+        <div class="book-text">
+            <h2 class="book-title"><%- `${book.title}` %></h2>
+            <p class='book-author'><%- `Author: ${book.author}` %></p>
+            <p class='book-type'><%- `${book.type}` %></p>
+            <p class='book-id'><%- `ID: ${book.id}` %></p>
+        </div>
+    </div>
+</li>
