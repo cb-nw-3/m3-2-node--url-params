@@ -1,0 +1,22 @@
+.typeRow {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+}
+.typeItem {
+  display: flex;
+  justify-content: space-evenly;
+}
+.typeInfo {
+  flex: 1;
+  margin: auto;
+}
+.typeInfo > p {
+  display: inline;
+  font-size: 20px;
+}
+.typeInfo > p:first-of-type {
+  display: inline;
+  font-weight: bold;
+  font-size: 25px;
+}

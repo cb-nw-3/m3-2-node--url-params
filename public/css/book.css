@@ -1,0 +1,25 @@
+.bookRow {
+  display: flex;
+  flex-direction: column;
+}
+.titleAuthor {
+  font-size: 20px;
+  display: flex;
+  border-bottom: 1px groove black;
+  justify-content: center;
+}
+.bookTitle {
+  flex: 1;
+  font-family: "Open Sans", sans-serif;
+  /* margin-left: 5%; */
+}
+.bookAuthor {
+  flex: 1;
+  font-style: italic;
+}
+.bookID {
+  flex: 1;
+}
+.bookType {
+  text-align: left;
+}

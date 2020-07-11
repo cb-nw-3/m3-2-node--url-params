@@ -1,0 +1,20 @@
+<% bookTypes.forEach(function(item) { %>
+  
+<div>
+    <div class="typeRow">
+        <div class="typeItem">
+            <div class="typeInfo">
+                <p>Title: </p><p><%- item.title %></p>
+            </div>
+            <div class="typeInfo">
+                <p>Author: </p><p><%- item.author %></p>
+            </div>
+            <div class="typeInfo">
+                <img style="width: 75px; height: 100px;" src=<%- item.imgUrl %> alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<% }); %>
+

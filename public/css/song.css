@@ -1,0 +1,68 @@
+body {
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  flex: 0 0 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #808080;
+  padding: 0 24px;
+  font-family: "Open Sans", sans-serif;
+}
+.songRow {
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 1px;
+}
+.songItem {
+  display: flex;
+}
+
+.rankStream {
+  flex: 1;
+}
+.rank {
+  font-size: 40px;
+  margin-bottom: 0;
+  font-family: "Open Sans", sans-serif;
+}
+.stream {
+  margin-top: 0;
+}
+
+.songArtist {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.songDate {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.song {
+  font-weight: bold;
+  margin: 0;
+  font-size: 20px;
+}
+.artist {
+  margin: 0;
+  font-size: 20px;
+  font-style: italic;
+}
+.songGroup {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  margin-bottom: 0;
+}
+.subtitle {
+  font-size: 20px;
+}
